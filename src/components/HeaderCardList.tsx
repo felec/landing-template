@@ -83,15 +83,18 @@ const Card = ({ content }: { content: Content }) => {
       <div className='flex flex-col justify-evenly h-1/2 text-center'>
         <h3 className='text-xl font-bold'>{content.title}</h3>
 
-        <p style={{ fontSize: '1rem' }} className='text-gray-500 tracking-wide'>
+        <p
+          style={{ fontSize: '1rem' }}
+          className=' text-gray-500 tracking-wide'
+        >
           {content.subTitle}
         </p>
 
         <span
           style={{ fontSize: '1rem' }}
-          className='text-lg font-semibold text-purple-600'
+          className='text-lg font-semibold text-purple-600 tracking-wide'
         >
-          Starting at ${content.price}0/month
+          Starting at ${content.price}/month
         </span>
       </div>
     </motion.div>

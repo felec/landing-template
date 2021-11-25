@@ -2,9 +2,11 @@
 import { motion } from 'framer-motion';
 import { MdKeyboardArrowDown, MdAccountCircle } from 'react-icons/md';
 
+import { MapDots } from './components/MapDots';
 import { HeaderCardList } from './components/HeaderCardList';
 import { HeaderLogo } from './components/HeaderLogo';
 import Background from './assets/polygon_bg.svg';
+import { ReactComponent as Map } from './assets/map.svg';
 
 const langVariants = {
   hidden: {
@@ -140,7 +142,7 @@ function App() {
             <input
               className='h-14 focus:outline-none focus:border-transparent rounded-md pl-4'
               type='text'
-              placeholder='Email address'
+              placeholder='Email Address'
             />
             <input
               className='h-14 focus:outline-none focus:border-transparent rounded-md pl-4 mx-4'
@@ -159,7 +161,20 @@ function App() {
         <HeaderCardList />
       </section>
 
-      <div className='h-24 mt-28'></div>
+      <section className='flex flex-col items-center mt-28'>
+        <h2 className='flex text-4xl font-bold'>
+          Provident illo, sit dolorum culpa{' '}
+          <span className='text-lg self-start'>®</span>
+        </h2>
+        <span className='text-2xl font-thin text-gray-500 py-8'>
+          10 locations worldwide.
+        </span>
+
+        <div className='relative h-5/6 w-5/6'>
+          <MapDots />
+          <Map />
+        </div>
+      </section>
     </div>
   );
 }
