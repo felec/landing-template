@@ -2,9 +2,9 @@
 import { motion } from 'framer-motion';
 import { MdKeyboardArrowDown, MdAccountCircle } from 'react-icons/md';
 
-import { HeaderCanvas } from './components/HeaderCanvas';
 import { HeaderCardList } from './components/HeaderCardList';
 import { HeaderLogo } from './components/HeaderLogo';
+import Background from './assets/polygon_bg.svg';
 
 const langVariants = {
   hidden: {
@@ -24,10 +24,14 @@ const langVariants = {
 
 function App() {
   return (
-    <div className='relative flex flex-col h-full w-full'>
-      <div className='absolute top-0 left-0 z-0'></div>
-
-      <div className='flex justify-between items-center px-16 py-2 z-20 bg-gray-300'>
+    <div
+      style={{
+        backgroundImage: `url(${Background})`,
+        backgroundRepeat: 'no-repeat',
+      }}
+      className='relative flex flex-col h-full w-full'
+    >
+      <div className='flex justify-between items-center px-16 py-2 z-20 bg-gray-200'>
         <div></div>
 
         <a href='#' className='flex text-sm'>
@@ -87,7 +91,7 @@ function App() {
         </div>
       </div>
 
-      <div className='flex justify-between items-center px-16 pt-4 z-10'>
+      <div className='flex justify-between items-center px-16 pt-4'>
         <div className='flex items-center text-3xl text-white font-light font-mono'>
           <HeaderLogo />
           <h2 className='ml-2'>Company</h2>
@@ -121,7 +125,7 @@ function App() {
         </nav>
       </div>
 
-      <section className='flex flex-col items-center mt-28 z-10'>
+      <section className='flex flex-col items-center mt-28'>
         <h1 className='text-5xl font-bold text-white'>
           Ducimus Consequntur Delectus
         </h1>
@@ -145,15 +149,15 @@ function App() {
             />
           </form>
 
-          <button className='bg-purple-600 hover:bg-purple-500 rounded-md text-white font-bold px-8 py-4'>
+          <button className='bg-purple-800 hover:bg-purple-700 rounded-md text-white font-bold px-8 py-4'>
             Create Account
           </button>
         </div>
       </section>
 
-      <div className='flex justify-evenly z-10 mt-28 px-20'>
+      <section className='flex justify-evenly mt-28 px-12'>
         <HeaderCardList />
-      </div>
+      </section>
 
       <div className='h-24 mt-28'></div>
     </div>

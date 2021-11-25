@@ -1,8 +1,8 @@
 export const HeaderLogo = () => {
   return (
     <svg
-      height='50px'
-      width='50px'
+      height='3.5rem'
+      width='3.5rem'
       data-name='Layer 1'
       version='1.1'
       viewBox='0 0 382.94 405.93'
