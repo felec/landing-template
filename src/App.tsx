@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { useState, MouseEvent } from 'react';
 import { motion } from 'framer-motion';
-import { MdKeyboardArrowDown, MdAccountCircle } from 'react-icons/md';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 import { MapDots } from './components/MapDots';
 import { HeaderCardList } from './components/HeaderCardList';
-import { HeaderLogo } from './components/HeaderLogo';
+import { HeaderNav } from './components/HeaderNav';
 import Background from './assets/polygon_bg.svg';
 import { ReactComponent as Map } from './assets/map.svg';
+import { ReactComponent as Logo } from './assets/logo.svg';
 
 const langVariants = {
   hidden: {
@@ -25,6 +27,15 @@ const langVariants = {
 };
 
 function App() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleForm = (e: MouseEvent) => {
+    e.preventDefault();
+    setEmail('');
+    setPassword('');
+  };
+
   return (
     <div
       style={{
@@ -95,36 +106,11 @@ function App() {
 
       <div className='flex justify-between items-center px-16 pt-4'>
         <div className='flex items-center text-3xl text-white font-light font-mono'>
-          <HeaderLogo />
+          <Logo />
           <h2 className='ml-2'>Company</h2>
         </div>
 
-        <nav className='w-3/5 ml-16'>
-          <ul className='flex justify-evenly items-center text-md font-semibold text-white'>
-            <li className='flex items-center'>
-              <h3 className='pr-1'>Products</h3>
-              <MdKeyboardArrowDown opacity={0.5} size={20} />
-            </li>
-            <li className='flex items-center'>
-              <h3 className='pr-1'>Features</h3>
-              <MdKeyboardArrowDown opacity={0.5} size={20} />
-            </li>
-            <li className='flex items-center'>
-              <h3 className='pr-1'>Resources</h3>
-              <MdKeyboardArrowDown opacity={0.5} size={20} />
-            </li>
-            <li className='flex items-center'>
-              <h3 className='pr-1'>About</h3>
-              <MdKeyboardArrowDown opacity={0.5} size={20} />
-            </li>
-            <li className='flex items-center cursor-pointer'>
-              <h3 className='pr-1'>Partners</h3>
-            </li>
-            <li className='cursor-pointer'>
-              <MdAccountCircle size={28} />
-            </li>
-          </ul>
-        </nav>
+        <HeaderNav />
       </div>
 
       <section className='flex flex-col items-center mt-28'>
@@ -140,20 +126,27 @@ function App() {
         <div className='flex items-center'>
           <form>
             <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className='h-14 focus:outline-none focus:border-transparent rounded-md pl-4'
               type='text'
               placeholder='Email Address'
             />
             <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className='h-14 focus:outline-none focus:border-transparent rounded-md pl-4 mx-4'
               type='text'
               placeholder='Password'
             />
-          </form>
 
-          <button className='bg-purple-800 hover:bg-purple-700 rounded-md text-white font-bold px-8 py-4'>
-            Create Account
-          </button>
+            <button
+              onClick={(e) => handleForm(e)}
+              className='bg-purple-800 hover:bg-purple-700 rounded-md text-white font-bold px-8 py-4'
+            >
+              Create Account
+            </button>
+          </form>
         </div>
       </section>
 
@@ -166,9 +159,9 @@ function App() {
           Provident illo, sit dolorum culpa{' '}
           <span className='text-lg self-start'>®</span>
         </h2>
-        <span className='text-2xl font-thin text-gray-500 py-8'>
-          10 locations worldwide.
-        </span>
+        <p className='text-2xl font-thin text-gray-500 mt-8 mb-16'>
+          10 locations worldwide
+        </p>
 
         <div className='relative h-5/6 w-5/6'>
           <MapDots />

@@ -1,45 +1,50 @@
-<svg width="220.42" height="206.94" data-name="Layer 1" version="1.1" viewBox="0 0 266.42 251.9" xmlns="http://www.w3.org/2000/svg">
- <polygon transform="translate(132.42 -20.051)" points="99.7 104.55 65.4 124.35 99.7 144.15 134 124.35" style="fill:#e4e4e4"/>
- <polygon transform="translate(-64.1 -20.83)" points="65.4 124.35 99.7 144.15 134 124.35 99.7 104.55" style="fill:#e4e4e4"/>
- <polygon transform="translate(-65.4 21.249)" points="282.1 183.8 199.89 136.34 117.68 183.8 199.89 231.27" style="fill:#e4e4e4"/>
- <g transform="translate(0 .11942)">
-  <path d="m125.67 138.36a1 1 0 0 1-0.52-0.14l-2.6-1.58a1 1 0 0 1-0.33-1.38 1 1 0 0 1 1.37-0.33l2.6 1.58a1 1 0 0 1 0.33 1.37 1 1 0 0 1-0.85 0.48zm-11.26-6.84a1 1 0 0 1-0.52-0.15l-2.6-1.58a1 1 0 0 1-0.33-1.37 1 1 0 0 1 1.37-0.34l2.6 1.58a1 1 0 0 1 0.33 1.38 1 1 0 0 1-0.85 0.48zm-11.26-6.85a1.07 1.07 0 0 1-0.52-0.14l-2.6-1.58a1 1 0 0 1-0.33-1.38 1 1 0 0 1 1.37-0.33l2.6 1.58a1 1 0 0 1-0.52 1.85zm-11.26-6.84a1 1 0 0 1-0.52-0.15l-2.6-1.58a1 1 0 1 1 1-1.71l2.6 1.58a1 1 0 0 1-0.52 1.86zm-11.29-6.85a1 1 0 0 1-0.52-0.15l-2.6-1.58a1 1 0 1 1 1-1.7l2.6 1.58a1 1 0 0 1-0.52 1.85zm-11.24-6.8a1 1 0 0 1-0.51-0.14l-2.6-1.58a1 1 0 1 1 1-1.71l2.59 1.58a1 1 0 0 1 0.34 1.37 1 1 0 0 1-0.82 0.48zm-11.26-6.84a1 1 0 0 1-0.5-0.16l-2.59-1.58a1 1 0 0 1-0.34-1.37 1 1 0 0 1 1.38-0.34l2.59 1.58a1 1 0 0 1-0.52 1.86zm-11.26-6.85a1 1 0 0 1-0.52-0.14l-2.59-1.58a1 1 0 1 1 1-1.71l2.6 1.58a1 1 0 0 1-0.52 1.85z" style="fill:#e6e6e6"/>
-  <path d="m135.6 144.41a0.92 0.92 0 0 1-0.51-0.15l-1.29-0.78a1 1 0 0 1-0.33-1.37 1 1 0 0 1 1.37-0.34l0.75 0.46 0.73-0.48a1.0013 1.0013 0 0 1 1.09 1.68l-1.26 0.82a1.1 1.1 0 0 1-0.55 0.16z" style="fill:#e6e6e6"/>
-  <path d="m145 138.33a1 1 0 0 1-0.54-1.84l2.43-1.57a1.0013 1.0013 0 1 1 1.09 1.68l-2.44 1.58a1 1 0 0 1-0.54 0.15zm10.6-6.83a1 1 0 0 1-0.55-1.84l2.44-1.58a1.0013 1.0013 0 0 1 1.09 1.68l-2.44 1.58a1.09 1.09 0 0 1-0.54 0.16zm10.56-6.84a1 1 0 0 1-0.84-0.46 1 1 0 0 1 0.29-1.38l2.44-1.58a1.0013 1.0013 0 1 1 1.09 1.68l-2.44 1.58a1 1 0 0 1-0.57 0.16zm10.56-6.84a1 1 0 0 1-0.54-1.84l2.44-1.58a1 1 0 0 1 1.08 1.68l-2.43 1.58a1 1 0 0 1-0.58 0.16zm10.57-6.84a1 1 0 0 1-0.55-1.84l2.44-1.57a1 1 0 0 1 1.09 1.67l-2.44 1.58a1 1 0 0 1-0.57 0.16zm10.53-6.8a1 1 0 0 1-0.54-1.84l2.43-1.58a1.0013 1.0013 0 1 1 1.09 1.68l-2.44 1.58a1 1 0 0 1-0.54 0.16zm10.57-6.84a1 1 0 0 1-0.84-0.46 1 1 0 0 1 0.29-1.38l2.44-1.58a1.0013 1.0013 0 0 1 1.09 1.68l-2.44 1.58a1 1 0 0 1-0.54 0.13zm10.56-6.84a1 1 0 0 1-0.54-1.84l2.43-1.58a1.0013 1.0013 0 1 1 1.09 1.68l-2.44 1.58a1 1 0 0 1-0.54 0.13z" style="fill:#e6e6e6"/>
-  <polygon transform="translate(-65.4,-46.819)" points="117.68 183.8 199.89 231.27 282.1 183.8 199.89 136.34" style="fill:#ffd200"/>
-  <ellipse cx="132.59" cy="138.48" rx="31.7" ry="20.56" style="opacity:.09"/>
-  <polygon transform="translate(-65.4,-46.819)" points="117.68 203.39 199.89 250.86 282.1 203.39 282.1 183.8 248.16 183.8 199.89 155.93 151.61 183.8 117.68 183.8" style="fill:#ffd200"/>
-  <polygon transform="translate(-65.4,-46.819)" points="117.68 203.39 199.89 250.86 282.1 203.39 282.1 183.8 248.16 183.8 199.89 155.93 151.61 183.8 117.68 183.8" style="fill:#fff;opacity:.44"/>
-  <polygon transform="translate(-65.4,-46.819)" points="150.73 120.04 197.99 96.42 245.25 120.04 197.99 153.66" style="fill:#24285b"/>
-  <polygon transform="translate(-65.4,-46.819)" points="197.99 139.26 197.99 46.08 150.73 109.86" style="fill:#68e1fd"/>
-  <polygon transform="translate(-65.4,-46.819)" points="197.99 139.26 197.99 46.08 245.25 109.86" style="fill:#68e1fd"/>
-  <polygon transform="translate(-65.4,-46.819)" points="197.99 139.26 197.99 46.08 245.25 109.86" style="fill:#fff;opacity:.44"/>
-  <polygon transform="translate(-65.4,-46.819)" points="197.99 153.66 197.99 185.94 150.73 120.04" style="fill:#68e1fd"/>
-  <polygon transform="translate(-65.4,-46.819)" points="197.99 153.66 197.99 185.94 245.25 120.04" style="fill:#68e1fd"/>
-  <polygon transform="translate(-65.4,-46.819)" points="197.99 153.66 197.99 185.94 245.25 120.04" style="fill:#fff;opacity:.44"/>
-  <path d="m229.51 83.631a1 1 0 0 1-0.54-1.84l1.26-0.81a1.0013 1.0013 0 0 1 1.09 1.68l-1.26 0.81a1 1 0 0 1-0.55 0.16z" style="fill:#e6e6e6"/>
-  <polygon transform="translate(-65.4,-46.819)" points="261.88 132.52 296.17 152.32 330.47 132.52 330.47 124.35 316.31 124.35 296.17 112.72 276.03 124.35 261.88 124.35" style="fill:#24285b"/>
-  <polygon transform="translate(-65.4,-46.819)" points="261.88 132.52 296.17 152.32 330.47 132.52 330.47 124.35 316.31 124.35 296.17 112.72 276.03 124.35 261.88 124.35" style="fill:#fff;opacity:.22"/>
-  <polygon transform="translate(-65.4,-46.819)" points="261.88 124.35 296.17 144.15 330.47 124.35 296.17 104.55" style="fill:#24285b"/>
-  <ellipse cx="230.77" cy="76.771" rx="14.6" ry="9.47" style="opacity:.09"/>
-  <polygon transform="translate(-65.4,-46.819)" points="272.6 91.2 296.59 79.2 320.58 91.2 296.59 108.27" style="fill:#24285b"/>
-  <polygon transform="translate(-65.4,-46.819)" points="296.59 100.95 296.59 53.65 272.6 86.03" style="fill:#68e1fd"/>
-  <polygon transform="translate(-65.4,-46.819)" points="296.59 100.95 296.59 53.65 320.58 86.03" style="fill:#68e1fd"/>
-  <polygon transform="translate(-65.4,-46.819)" points="296.59 100.95 296.59 53.65 320.58 86.03" style="fill:#fff;opacity:.44"/>
-  <polygon transform="translate(-65.4,-46.819)" points="296.59 108.27 296.59 124.65 272.6 91.2" style="fill:#68e1fd"/>
-  <polygon transform="translate(-65.4,-46.819)" points="296.59 108.27 296.59 124.65 320.58 91.2" style="fill:#68e1fd"/>
-  <polygon transform="translate(-65.4,-46.819)" points="296.59 108.27 296.59 124.65 320.58 91.2" style="fill:#fff;opacity:.44"/>
-  <path d="m35.6 83.601a1 1 0 0 1-0.52-0.15l-1.28-0.78a1 1 0 0 1-0.33-1.37 1 1 0 0 1 1.37-0.34l1.28 0.78a1 1 0 0 1 0.34 1.38 1 1 0 0 1-0.86 0.48z" style="fill:#e6e6e6"/>
-  <polygon transform="translate(-65.4,-46.819)" points="65.4 132.52 99.7 152.32 134 132.52 134 124.35 119.84 124.35 99.7 112.72 79.56 124.35 65.4 124.35" style="fill:#24285b"/>
-  <polygon transform="translate(-65.4,-46.819)" points="65.4 132.52 99.7 152.32 134 132.52 134 124.35 119.84 124.35 99.7 112.72 79.56 124.35 65.4 124.35" style="fill:#fff;opacity:.22"/>
-  <polygon transform="translate(-65.4,-46.819)" points="65.4 124.35 99.7 144.15 134 124.35 99.7 104.55" style="fill:#24285b"/>
-  <ellipse cx="33.09" cy="76.771" rx="14.6" ry="9.47" style="opacity:.09"/>
-  <polygon transform="translate(-65.4,-46.819)" points="75.71 91.2 99.7 79.2 123.69 91.2 99.7 108.27" style="fill:#24285b"/>
-  <polygon transform="translate(-65.4,-46.819)" points="99.7 100.95 99.7 53.65 75.71 86.03" style="fill:#68e1fd"/>
-  <polygon transform="translate(-65.4,-46.819)" points="99.7 100.95 99.7 53.65 123.69 86.03" style="fill:#68e1fd"/>
-  <polygon transform="translate(-65.4,-46.819)" points="99.7 100.95 99.7 53.65 123.69 86.03" style="fill:#fff;opacity:.44"/>
-  <polygon transform="translate(-65.4,-46.819)" points="99.7 108.27 99.7 124.65 75.71 91.2" style="fill:#68e1fd"/>
-  <polygon transform="translate(-65.4,-46.819)" points="99.7 108.27 99.7 124.65 123.69 91.2" style="fill:#68e1fd"/>
-  <polygon transform="translate(-65.4,-46.819)" points="99.7 108.27 99.7 124.65 123.69 91.2" style="fill:#fff;opacity:.44"/>
+<svg class="illustration styles_illustrationTablet__1DWOa" width="270.42" height="247.21" data-name="Layer 1" version="1.1" viewBox="0 0 266.42 242.36" xmlns="http://www.w3.org/2000/svg">
+ <polygon transform="matrix(2.0524 0 0 2.0524 -69.264 -52.902)" points="134 124.35 99.7 104.55 65.4 124.35 99.7 144.15" style="fill:#e4e4e4"/>
+ <polygon transform="translate(132.42 -20.028)" points="99.7 104.55 65.4 124.35 99.7 144.15 134 124.35" style="fill:#e4e4e4"/>
+ <polygon transform="translate(-64.1 -20.807)" points="65.4 124.35 99.7 144.15 134 124.35 99.7 104.55" style="fill:#e4e4e4"/>
+ <g transform="translate(0 .14279)">
+  <g>
+   <path d="m229.51 83.631a1 1 0 0 1-0.54-1.84l1.26-0.81a1.0013 1.0013 0 0 1 1.09 1.68l-1.26 0.81a1 1 0 0 1-0.55 0.16z" style="fill:#e6e6e6"/>
+   <polygon transform="translate(-65.4,-46.819)" points="316.31 124.35 296.17 112.72 276.03 124.35 261.88 124.35 261.88 132.52 296.17 152.32 330.47 132.52 330.47 124.35" style="fill:#24285b"/>
+   <polygon transform="translate(-65.4,-46.819)" points="316.31 124.35 296.17 112.72 276.03 124.35 261.88 124.35 261.88 132.52 296.17 152.32 330.47 132.52 330.47 124.35" style="fill:#fff;opacity:.22"/>
+   <polygon transform="translate(-65.4,-46.819)" points="261.88 124.35 296.17 144.15 330.47 124.35 296.17 104.55" style="fill:#24285b"/>
+   <ellipse cx="230.77" cy="76.771" rx="14.6" ry="9.47" style="opacity:.09"/>
+   <polygon transform="translate(-65.4,-46.819)" points="272.6 91.2 296.59 79.2 320.58 91.2 296.59 108.27" style="fill:#24285b"/>
+   <polygon transform="translate(-65.4,-46.819)" points="296.59 53.65 272.6 86.03 296.59 100.95" style="fill:#68e1fd"/>
+   <polygon transform="translate(-65.4,-46.819)" points="296.59 53.65 320.58 86.03 296.59 100.95" style="fill:#68e1fd"/>
+   <polygon transform="translate(-65.4,-46.819)" points="296.59 53.65 320.58 86.03 296.59 100.95" style="fill:#fff;opacity:.44"/>
+   <polygon transform="translate(-65.4,-46.819)" points="296.59 124.65 272.6 91.2 296.59 108.27" style="fill:#68e1fd"/>
+   <polygon transform="translate(-65.4,-46.819)" points="296.59 124.65 320.58 91.2 296.59 108.27" style="fill:#68e1fd"/>
+   <polygon transform="translate(-65.4,-46.819)" points="296.59 124.65 320.58 91.2 296.59 108.27" style="fill:#fff;opacity:.44"/>
+  </g>
+  <g>
+   <path d="m35.6 83.601a1 1 0 0 1-0.52-0.15l-1.28-0.78a1 1 0 0 1-0.33-1.37 1 1 0 0 1 1.37-0.34l1.28 0.78a1 1 0 0 1 0.34 1.38 1 1 0 0 1-0.86 0.48z" style="fill:#e6e6e6"/>
+   <polygon transform="translate(-65.4,-46.819)" points="119.84 124.35 99.7 112.72 79.56 124.35 65.4 124.35 65.4 132.52 99.7 152.32 134 132.52 134 124.35" style="fill:#24285b"/>
+   <polygon transform="translate(-65.4,-46.819)" points="119.84 124.35 99.7 112.72 79.56 124.35 65.4 124.35 65.4 132.52 99.7 152.32 134 132.52 134 124.35" style="fill:#fff;opacity:.22"/>
+   <polygon transform="translate(-65.4,-46.819)" points="65.4 124.35 99.7 144.15 134 124.35 99.7 104.55" style="fill:#24285b"/>
+   <ellipse cx="33.09" cy="76.771" rx="14.6" ry="9.47" style="opacity:.09"/>
+   <polygon transform="translate(-65.4,-46.819)" points="75.71 91.2 99.7 79.2 123.69 91.2 99.7 108.27" style="fill:#24285b"/>
+   <polygon transform="translate(-65.4,-46.819)" points="99.7 53.65 75.71 86.03 99.7 100.95" style="fill:#68e1fd"/>
+   <polygon transform="translate(-65.4,-46.819)" points="99.7 53.65 123.69 86.03 99.7 100.95" style="fill:#68e1fd"/>
+   <polygon transform="translate(-65.4,-46.819)" points="99.7 53.65 123.69 86.03 99.7 100.95" style="fill:#fff;opacity:.44"/>
+   <polygon transform="translate(-65.4,-46.819)" points="99.7 124.65 75.71 91.2 99.7 108.27" style="fill:#68e1fd"/>
+   <polygon transform="translate(-65.4,-46.819)" points="99.7 124.65 123.69 91.2 99.7 108.27" style="fill:#68e1fd"/>
+   <polygon transform="translate(-65.4,-46.819)" points="99.7 124.65 123.69 91.2 99.7 108.27" style="fill:#fff;opacity:.44"/>
+  </g>
+  <g>
+   <path d="m130 160a2.0524 2.0524 0 0 1-1.1083-3.7764l2.586-1.6624a2.0551 2.0551 0 0 1 2.2371 3.448l-2.586 1.6624a2.0524 2.0524 0 0 1-1.1288 0.32838z" style="fill:#e6e6e6;stroke-width:2.0524"/>
+   <polygon transform="matrix(2.0524 0 0 2.0524 -475.27 -107.74)" points="330.47 124.35 316.31 124.35 296.17 112.72 276.03 124.35 261.88 124.35 261.88 132.52 296.17 152.32 330.47 132.52" style="fill:#24285b"/>
+   <polygon transform="matrix(2.0524 0 0 2.0524 -475.27 -107.74)" points="330.47 124.35 316.31 124.35 296.17 112.72 276.03 124.35 261.88 124.35 261.88 132.52 296.17 152.32 330.47 132.52" style="fill:#fff;opacity:.22"/>
+   <polygon transform="matrix(2.0524 0 0 2.0524 -475.27 -107.74)" points="296.17 104.55 261.88 124.35 296.17 144.15 330.47 124.35" style="fill:#24285b"/>
+   <ellipse cx="132.59" cy="145.92" rx="29.965" ry="19.436" style="opacity:.09;stroke-width:2.0524"/>
+   <path d="m135.6 144.41a0.92 0.92 0 0 1-0.51-0.15l-1.29-0.78a1 1 0 0 1-0.33-1.37 1 1 0 0 1 1.37-0.34l0.75 0.46 0.73-0.48a1.0013 1.0013 0 0 1 1.09 1.68l-1.26 0.82a1.1 1.1 0 0 1-0.55 0.16z" style="fill:#e6e6e6"/>
+   <polygon transform="translate(-65.4,-46.819)" points="150.73 120.04 197.99 96.42 245.25 120.04 197.99 153.66" style="fill:#24285b"/>
+   <polygon transform="translate(-65.4,-46.819)" points="197.99 46.08 150.73 109.86 197.99 139.26" style="fill:#68e1fd"/>
+   <polygon transform="translate(-65.4,-46.819)" points="197.99 46.08 245.25 109.86 197.99 139.26" style="fill:#68e1fd"/>
+   <polygon transform="translate(-65.4,-46.819)" points="197.99 46.08 245.25 109.86 197.99 139.26" style="fill:#fff;opacity:.44"/>
+   <polygon transform="translate(-65.4,-46.819)" points="197.99 185.94 150.73 120.04 197.99 153.66" style="fill:#68e1fd"/>
+   <polygon transform="translate(-65.4,-46.819)" points="197.99 185.94 245.25 120.04 197.99 153.66" style="fill:#68e1fd"/>
+   <polygon transform="translate(-65.4,-46.819)" points="197.99 185.94 245.25 120.04 197.99 153.66" style="fill:#fff;opacity:.44"/>
+  </g>
  </g>
 </svg>
