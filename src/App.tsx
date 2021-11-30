@@ -8,7 +8,7 @@ import { HeaderCardList } from './components/HeaderCardList';
 import { HeaderNav } from './components/HeaderNav';
 import Background from './assets/polygon_bg.svg';
 import { ReactComponent as Map } from './assets/map.svg';
-import { ReactComponent as Logo } from './assets/logo.svg';
+import { ReactComponent as Logo } from './assets/company_logo.svg';
 
 const langVariants = {
   hidden: {
@@ -105,7 +105,7 @@ function App() {
       </div>
 
       <div className='flex justify-between items-center px-16 pt-4'>
-        <div className='flex items-center text-3xl text-white font-light font-mono'>
+        <div className='flex items-center text-3xl text-white font-light font-mono cursor-pointer'>
           <Logo />
           <h2 className='ml-2'>Company</h2>
         </div>
