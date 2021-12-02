@@ -78,7 +78,7 @@ function App() {
           >
             <div className='flex items-center hover:text-purple-600 cursor-pointer'>
               <p>English</p>
-              <MdKeyboardArrowDown size={20} />
+              <MdKeyboardArrowDown size={20} opacity={0.5} />
             </div>
 
             <motion.div

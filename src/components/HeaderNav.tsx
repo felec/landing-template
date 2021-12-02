@@ -2,19 +2,17 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  MdKeyboardArrowDown,
   MdAccountCircle,
   MdAdminPanelSettings,
+  MdAddModerator,
   MdAdsClick,
   MdAssessment,
-  MdInfo,
-  MdPeopleAlt,
-  MdAddModerator,
-  MdOutlineImportContacts,
   MdBusinessCenter,
+  MdInfo,
+  MdKeyboardArrowDown,
+  MdPeopleAlt,
+  MdOutlineImportContacts,
 } from 'react-icons/md';
-
-import './HeaderNav.css';
 
 interface NavItem {
   width: number;
@@ -28,64 +26,62 @@ export const HeaderNav = () => {
   const [navIndex, setNavIndex] = useState(-1);
 
   const navItems = [
-    { width: 440, height: 240, x: 5, title: 'Products', index: 0 },
-    { width: 340, height: 240, x: 90, title: 'Features', index: 1 },
-    { width: 200, height: 240, x: 158, title: 'About', index: 2 },
+    { width: 440, height: 240, x: 45, title: 'Products', index: 0 },
+    { width: 340, height: 240, x: 133, title: 'Features', index: 1 },
+    { width: 200, height: 240, x: 198, title: 'About', index: 2 },
   ];
 
   const handleNavExit = () => setNavIndex(-1);
 
   return (
-    <nav className='flex flex-col w-2/5'>
-      <ul className='list flex justify-evenly items-center text-md font-semibold text-white'>
-        {navItems.map((n, i) => {
-          return (
-            <li
-              key={n.title}
-              onMouseEnter={() => setNavIndex(i)}
-              className='relative flex items-center hover:opacity-50 px-4'
-            >
-              <h3 className='pr-1 cursor-default'>{n.title}</h3>
-              <MdKeyboardArrowDown opacity={0.5} size={20} />
-            </li>
-          );
-        })}
-        <li className='flex items-center hover:opacity-50 cursor-pointer'>
-          <h3 className='mx-4'>Partners</h3>
-        </li>
-        <li className='cursor-pointer ml-4'>
-          <MdAccountCircle size={28} />
-        </li>
-      </ul>
+    <div onMouseLeave={handleNavExit} className='relative w-2/5'>
+      <nav>
+        <ul className='flex justify-evenly items-center text-md font-semibold text-white'>
+          {navItems.map((n, i) => {
+            return (
+              <li
+                key={n.title}
+                onMouseEnter={() => setNavIndex(i)}
+                className='relative flex items-center hover:opacity-50 px-4'
+              >
+                <h3 className='pr-1'>{n.title}</h3>
+                <MdKeyboardArrowDown opacity={0.5} size={20} />
+              </li>
+            );
+          })}
+          <li className='flex items-center hover:opacity-50 cursor-pointer'>
+            <h3 className='mx-4'>Partners</h3>
+          </li>
+          <li className='cursor-pointer ml-4'>
+            <MdAccountCircle size={28} />
+          </li>
+        </ul>
+      </nav>
 
-      <div className='drop-down'>
-        {navIndex !== -1 && <HeaderBox info={navItems[navIndex]} />}
-      </div>
-    </nav>
+      {navIndex !== -1 && <HeaderBox info={navItems[navIndex]} />}
+    </div>
   );
 };
 
 const HeaderBox = ({ info }: { info: NavItem }) => {
   return (
-    <div className='relative'>
+    <div className='relative -top-4 left-0'>
       <motion.div
+        initial={{
+          translateX: `${info.x}px`,
+          scaleX: info.width / 384,
+          scaleY: info.height / 240,
+        }}
         animate={{
           translateX: `${info.x}px`,
           scaleX: info.width / 384,
           scaleY: info.height / 240,
-          transition: {
-            ease: 'easeOut',
-          },
+          transition: { ease: 'easeOut' },
         }}
-        className='absolute top-2 left-10 h-60 w-96 bg-white shadow-md rounded-md'
+        className='absolute top-4 left-0 h-60 w-96 bg-white shadow-md rounded-md'
       ></motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { ease: 'linear', delay: 0.25 } }}
-      >
-        {renderNavContent(info)}
-      </motion.div>
+      {renderNavContent(info)}
     </div>
   );
 };
@@ -94,7 +90,10 @@ const renderNavContent = (info: NavItem) => {
   switch (info.index) {
     case 0:
       return (
-        <div
+        <motion.div
+          layoutId='fade'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { ease: 'linear' } }}
           style={{ height: info.height, width: info.width }}
           className='absolute top-2 left-8 px-4 flex flex-col justify-evenly'
         >
@@ -133,19 +132,22 @@ const renderNavContent = (info: NavItem) => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       );
 
     case 1:
       return (
-        <div
+        <motion.div
+          layoutId='fade'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { ease: 'linear' } }}
           style={{ height: info.height, width: info.width }}
           className='absolute top-2 left-40 px-12 py-4 flex flex-col justify-evenly'
         >
           <div className='flex flex-col mb-4'>
             <h3 className='text-2xl font-bold text-purple-600'>Architecto</h3>
             <p className='text-sm font-light text-gray-600'>
-              Praesentium adipisci rerum adipisicing.
+              Praesentium adipisci rerum adipis.
             </p>
           </div>
 
@@ -176,12 +178,15 @@ const renderNavContent = (info: NavItem) => {
               </h4>
             </div>
           </div>
-        </div>
+        </motion.div>
       );
 
     case 2:
       return (
-        <div
+        <motion.div
+          layoutId='fade'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { ease: 'linear' } }}
           style={{ height: info.height, width: info.width }}
           className='absolute text-sm top-2 left-72 px-4 flex flex-col justify-evenly'
         >
@@ -219,7 +224,7 @@ const renderNavContent = (info: NavItem) => {
               Nesciunt dicta
             </h3>
           </a>
-        </div>
+        </motion.div>
       );
 
     default:
