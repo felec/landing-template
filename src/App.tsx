@@ -41,6 +41,7 @@ function App() {
       style={{
         backgroundImage: `url(${Background})`,
         backgroundRepeat: 'no-repeat',
+        fontFamily: 'Open Sans, sans-serif',
       }}
       className='relative flex flex-col h-full w-full'
     >
@@ -54,19 +55,19 @@ function App() {
           >
             NEWS
           </button>
-          <p className='pl-2 font-semibold'>
+          <p className='pl-2'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit
           </p>
         </a>
 
-        <div className='relative flex items-center text-xs font-thin text-gray-600'>
+        <div className='relative flex items-center text-xs font-thin text-gray-900'>
           <a href='#' className='hover:text-purple-600'>
             Docs
           </a>
           <a href='#' className='mx-4 hover:text-purple-600'>
             Support
           </a>
-          <div className='self-stretch border border-gray-500 mr-4'></div>
+          <div className='self-stretch border border-gray-400 mr-4'></div>
 
           <p className='opacity-0'>______</p>
           <motion.div
@@ -82,7 +83,7 @@ function App() {
 
             <motion.div
               variants={langVariants}
-              className='flex flex-col items-center justify-evenly h-40 px-4 text-sm text-gray-500 bg-gray-100 border rounded-lg'
+              className='flex flex-col font-serif items-center justify-evenly h-40 px-4 text-sm text-gray-500 bg-gray-100 border rounded-lg'
             >
               <a href='#' className='hover:text-purple-600'>
                 Português
@@ -104,11 +105,13 @@ function App() {
         </div>
       </div>
 
-      <div className='flex justify-between items-center px-16 pt-4'>
+      <div className='flex items-center justify-evenly pt-4'>
         <div className='flex items-center text-3xl text-white font-light font-mono cursor-pointer'>
           <Logo />
           <h2 className='ml-2'>Company</h2>
         </div>
+
+        <div className='w-20'></div>
 
         <HeaderNav />
       </div>
