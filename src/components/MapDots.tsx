@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 
 interface Coords {
   x: number;
@@ -29,7 +30,21 @@ const modalVariants = {
   },
 };
 
-export const MapDots = () => {
+export const MapDots = ({ inView }: { inView: boolean }) => {
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        scale: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.25, 1],
+        transition: {
+          duration: 0.5,
+          staggerChildren: 0.1,
+        },
+      });
+    }
+  }, [inView]);
+
   const dots: Coords[] = [
     { x: 145, y: 215, city: 'Los Angeles, CA' },
     { x: 205, y: 225, city: 'Austin, TX' },
@@ -44,30 +59,31 @@ export const MapDots = () => {
   ];
 
   return (
-    <>
-      {dots.map((d, i) => {
-        return (
-          <motion.div
-            initial='initial'
-            whileHover='hover'
-            variants={dotVariants}
-            style={{
-              position: 'absolute',
-              zIndex: (20 - i).toString(),
-              top: d.y,
-              left: d.x,
-            }}
-            className='h-3 w-3 rounded-full bg-purple-500 cursor-pointer'
-          >
+    <motion.div>
+      {inView &&
+        dots.map((d, i) => {
+          return (
             <motion.div
-              variants={modalVariants}
-              className='flex justify-center text-xs min-w-min w-28 border font-bold bg-white shadow-lg p-2 rounded-sm'
+              initial='initial'
+              whileHover='hover'
+              variants={dotVariants}
+              style={{
+                position: 'absolute',
+                zIndex: (20 - i).toString(),
+                top: d.y,
+                left: d.x,
+              }}
+              className='h-3 w-3 rounded-full bg-purple-500 cursor-pointer'
             >
-              {d.city}
+              <motion.div
+                variants={modalVariants}
+                className='flex justify-center text-xs min-w-min w-28 border font-bold bg-white shadow-lg p-2 rounded-sm'
+              >
+                {d.city}
+              </motion.div>
             </motion.div>
-          </motion.div>
-        );
-      })}
-    </>
+          );
+        })}
+    </motion.div>
   );
 };

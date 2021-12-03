@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 import { ReactComponent as Coin } from '../assets/coin.svg';
 import { ReactComponent as Crypto } from '../assets/crypto.svg';
 import { ReactComponent as Pay } from '../assets/pay.svg';
@@ -13,13 +15,28 @@ interface Content {
 
 const cardVariants = {
   initial: {
-    translateY: 0,
+    translateY: 10,
   },
   hover: {
     translateY: -10,
     transition: {
       ease: 'linear',
       duration: 0.2,
+    },
+  },
+};
+
+const imgVariants = {
+  initial: {
+    opacity: 0,
+    translateY: 20,
+  },
+  animate: {
+    opacity: 1,
+    translateY: 0,
+    transition: {
+      duration: 0.75,
+      ease: 'easeOut',
     },
   },
 };
@@ -72,14 +89,23 @@ export const HeaderCardList = () => {
 };
 
 const Card = ({ content }: { content: Content }) => {
+  const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
+
   return (
     <motion.div
+      ref={ref}
       variants={cardVariants}
       initial='initial'
       whileHover='hover'
       className='flex flex-col items-center h-96 w-72 p-4 rounded-md shadow-md hover:shadow-2xl bg-white cursor-pointer'
     >
-      {content.image}
+      {inView ? (
+        <motion.div initial='initial' animate='animate' variants={imgVariants}>
+          {content.image}
+        </motion.div>
+      ) : (
+        <div className='h-full'></div>
+      )}
       <div className='flex flex-col justify-evenly h-1/2 text-center'>
         <h3 className='text-xl font-bold'>{content.title}</h3>
 

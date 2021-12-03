@@ -91,7 +91,6 @@ const renderNavContent = (info: NavItem) => {
     case 0:
       return (
         <motion.div
-          layoutId='fade'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { ease: 'linear' } }}
           style={{ height: info.height, width: info.width }}
@@ -138,7 +137,6 @@ const renderNavContent = (info: NavItem) => {
     case 1:
       return (
         <motion.div
-          layoutId='fade'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { ease: 'linear' } }}
           style={{ height: info.height, width: info.width }}
@@ -184,7 +182,6 @@ const renderNavContent = (info: NavItem) => {
     case 2:
       return (
         <motion.div
-          layoutId='fade'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { ease: 'linear' } }}
           style={{ height: info.height, width: info.width }}

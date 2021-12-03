@@ -9,6 +9,7 @@ import { HeaderNav } from './components/HeaderNav';
 import Background from './assets/polygon_bg.svg';
 import { ReactComponent as Map } from './assets/map.svg';
 import { ReactComponent as Logo } from './assets/company_logo.svg';
+import { useInView } from 'react-intersection-observer';
 
 const langVariants = {
   hidden: {
@@ -29,6 +30,7 @@ const langVariants = {
 function App() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [ref, inView] = useInView({ threshold: 0.75, triggerOnce: true });
 
   const handleForm = (e: MouseEvent) => {
     e.preventDefault();
@@ -166,8 +168,8 @@ function App() {
           10 locations worldwide
         </p>
 
-        <div className='relative h-5/6 w-5/6'>
-          <MapDots />
+        <div ref={ref} className='relative h-5/6 w-5/6'>
+          <MapDots inView={inView} />
           <Map />
         </div>
       </section>
