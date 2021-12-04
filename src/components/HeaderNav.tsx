@@ -96,7 +96,7 @@ const renderNavContent = (info: NavItem) => {
           style={{ height: info.height, width: info.width }}
           className='absolute top-2 left-8 px-4 flex flex-col justify-evenly'
         >
-          <div className='flex cursor-pointer'>
+          <div className='flex cursor-pointer hover:opacity-70'>
             <div className='h-12 w-12 flex items-center justify-center bg-blue-300 rounded-full'>
               <MdAdminPanelSettings size={30} color='#fff' />
             </div>
@@ -108,7 +108,7 @@ const renderNavContent = (info: NavItem) => {
             </div>
           </div>
 
-          <div className='flex cursor-pointer'>
+          <div className='flex cursor-pointer hover:opacity-70'>
             <div className='h-12 w-12 flex items-center justify-center bg-green-300 rounded-full'>
               <MdAdsClick size={30} color='#fff' />
             </div>
@@ -120,7 +120,7 @@ const renderNavContent = (info: NavItem) => {
             </div>
           </div>
 
-          <div className='flex cursor-pointer'>
+          <div className='flex cursor-pointer hover:opacity-70'>
             <div className='h-12 w-12 flex items-center justify-center bg-indigo-300 rounded-full'>
               <MdAssessment size={30} color='#fff' />
             </div>

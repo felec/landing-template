@@ -1,15 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState, MouseEvent } from 'react';
+import { useState, MouseEvent, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MdKeyboardArrowDown } from 'react-icons/md';
+import { useInView } from 'react-intersection-observer';
 
-import { MapDots } from './components/MapDots';
 import { HeaderCardList } from './components/HeaderCardList';
 import { HeaderNav } from './components/HeaderNav';
+import { MapDots } from './components/MapDots';
 import Background from './assets/polygon_bg.svg';
 import { ReactComponent as Map } from './assets/map.svg';
 import { ReactComponent as Logo } from './assets/company_logo.svg';
-import { useInView } from 'react-intersection-observer';
 
 const langVariants = {
   hidden: {
@@ -107,7 +107,12 @@ function App() {
         </div>
       </div>
 
-      <div className='flex items-center justify-evenly pt-4'>
+      <div
+        style={{
+          backgroundColor:  ? 'transparent' : '#fff',
+        }}
+        className='sticky top-0 left-0 flex items-center justify-evenly pt-4'
+      >
         <div className='flex items-center text-3xl text-white font-light font-mono cursor-pointer'>
           <Logo />
           <h2 className='ml-2'>Company</h2>

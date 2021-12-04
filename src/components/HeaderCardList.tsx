@@ -82,7 +82,7 @@ export const HeaderCardList = () => {
   return (
     <>
       {cards.map((c) => (
-        <Card content={c} />
+        <Card key={c.title} content={c} />
       ))}
     </>
   );
@@ -97,7 +97,8 @@ const Card = ({ content }: { content: Content }) => {
       variants={cardVariants}
       initial='initial'
       whileHover='hover'
-      className='flex flex-col items-center h-96 w-72 p-4 rounded-md shadow-md hover:shadow-2xl bg-white cursor-pointer'
+      style={{ height: '28rem', width: '18rem' }}
+      className='flex flex-col items-center justify-end p-4 rounded-md shadow-md hover:shadow-2xl bg-white cursor-pointer'
     >
       {inView ? (
         <motion.div initial='initial' animate='animate' variants={imgVariants}>
