@@ -1,15 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useState, MouseEvent, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MdKeyboardArrowDown } from 'react-icons/md';
-import { useInView } from 'react-intersection-observer';
 
+import { Header } from './components/Header';
 import { HeaderCardList } from './components/HeaderCardList';
-import { HeaderNav } from './components/HeaderNav';
-import { MapDots } from './components/MapDots';
+import { MapSection } from './components/MapSection';
+import { SignUpForm } from './components/SignUpForm';
 import Background from './assets/polygon_bg.svg';
-import { ReactComponent as Map } from './assets/map.svg';
-import { ReactComponent as Logo } from './assets/company_logo.svg';
 
 const langVariants = {
   hidden: {
@@ -28,16 +25,6 @@ const langVariants = {
 };
 
 function App() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [ref, inView] = useInView({ threshold: 0.75, triggerOnce: true });
-
-  const handleForm = (e: MouseEvent) => {
-    e.preventDefault();
-    setEmail('');
-    setPassword('');
-  };
-
   return (
     <div
       style={{
@@ -51,12 +38,12 @@ function App() {
         <div></div>
 
         <a href='#' className='flex text-sm'>
-          <button
+          <div
             style={{ fontSize: '10px' }}
             className='text-white bg-purple-600 px-2 rounded-xl'
           >
             NEWS
-          </button>
+          </div>
           <p className='pl-2'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit
           </p>
@@ -107,21 +94,7 @@ function App() {
         </div>
       </div>
 
-      <div
-        style={{
-          backgroundColor:  ? 'transparent' : '#fff',
-        }}
-        className='sticky top-0 left-0 flex items-center justify-evenly pt-4'
-      >
-        <div className='flex items-center text-3xl text-white font-light font-mono cursor-pointer'>
-          <Logo />
-          <h2 className='ml-2'>Company</h2>
-        </div>
-
-        <div className='w-20'></div>
-
-        <HeaderNav />
-      </div>
+      <Header />
 
       <section className='flex flex-col items-center mt-28'>
         <h1 className='text-5xl font-bold text-white'>
@@ -133,51 +106,14 @@ function App() {
           dicta maxime.
         </h2>
 
-        <div className='flex items-center'>
-          <form>
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className='h-14 focus:outline-none focus:border-transparent rounded-md pl-4'
-              type='text'
-              placeholder='Email Address'
-            />
-            <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className='h-14 focus:outline-none focus:border-transparent rounded-md pl-4 mx-4'
-              type='text'
-              placeholder='Password'
-            />
-
-            <button
-              onClick={(e) => handleForm(e)}
-              className='bg-purple-800 hover:bg-purple-700 rounded-md text-white font-bold px-8 py-4'
-            >
-              Create Account
-            </button>
-          </form>
-        </div>
+        <SignUpForm />
       </section>
 
       <section className='flex justify-evenly mt-28 px-12'>
         <HeaderCardList />
       </section>
 
-      <section className='flex flex-col items-center mt-28'>
-        <h2 className='flex text-4xl font-bold'>
-          Provident illo, sit dolorum culpa{' '}
-          <span className='text-lg self-start'>®</span>
-        </h2>
-        <p className='text-2xl font-thin text-gray-500 mt-8 mb-16'>
-          10 locations worldwide
-        </p>
-
-        <div ref={ref} className='relative h-5/6 w-5/6'>
-          <MapDots inView={inView} />
-          <Map />
-        </div>
-      </section>
+      <MapSection />
     </div>
   );
 }

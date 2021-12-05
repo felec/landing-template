@@ -19,24 +19,27 @@ interface NavItem {
   height: number;
   x: number;
   title: string;
-  index: number;
 }
 
-export const HeaderNav = () => {
+export const HeaderNav = ({ inView }: { inView: boolean }) => {
   const [navIndex, setNavIndex] = useState(-1);
 
   const navItems = [
-    { width: 440, height: 240, x: 45, title: 'Products', index: 0 },
-    { width: 340, height: 240, x: 133, title: 'Features', index: 1 },
-    { width: 200, height: 240, x: 198, title: 'About', index: 2 },
+    { width: 440, height: 240, x: 45, title: 'Products' },
+    { width: 340, height: 240, x: 133, title: 'Features' },
+    { width: 200, height: 240, x: 198, title: 'About' },
   ];
 
-  const handleNavExit = () => setNavIndex(-1);
+  const handleNavLeave = () => setNavIndex(-1);
 
   return (
-    <div onMouseLeave={handleNavExit} className='relative w-2/5'>
+    <header onMouseLeave={handleNavLeave} className='relative w-2/5'>
       <nav>
-        <ul className='flex justify-evenly items-center text-md font-semibold text-white'>
+        <ul
+          className={`flex justify-evenly items-center text-md font-semibold ${
+            inView ? 'text-white' : 'text-purple-600'
+          }`}
+        >
           {navItems.map((n, i) => {
             return (
               <li
@@ -59,7 +62,7 @@ export const HeaderNav = () => {
       </nav>
 
       {navIndex !== -1 && <HeaderBox info={navItems[navIndex]} />}
-    </div>
+    </header>
   );
 };
 
@@ -87,8 +90,8 @@ const HeaderBox = ({ info }: { info: NavItem }) => {
 };
 
 const renderNavContent = (info: NavItem) => {
-  switch (info.index) {
-    case 0:
+  switch (info.title) {
+    case 'Products':
       return (
         <motion.div
           initial={{ opacity: 0 }}
@@ -134,7 +137,7 @@ const renderNavContent = (info: NavItem) => {
         </motion.div>
       );
 
-    case 1:
+    case 'Features':
       return (
         <motion.div
           initial={{ opacity: 0 }}
@@ -179,7 +182,7 @@ const renderNavContent = (info: NavItem) => {
         </motion.div>
       );
 
-    case 2:
+    case 'About':
       return (
         <motion.div
           initial={{ opacity: 0 }}
