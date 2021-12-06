@@ -80,11 +80,11 @@ export const HeaderCardList = () => {
   ];
 
   return (
-    <>
+    <section className='flex justify-evenly my-28 px-12'>
       {cards.map((c) => (
         <Card key={c.title} content={c} />
       ))}
-    </>
+    </section>
   );
 };
 

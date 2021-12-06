@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  MdAccountCircle,
   MdAdminPanelSettings,
   MdAddModerator,
   MdAdsClick,
@@ -25,26 +24,24 @@ export const HeaderNav = ({ inView }: { inView: boolean }) => {
   const [navIndex, setNavIndex] = useState(-1);
 
   const navItems = [
-    { width: 440, height: 240, x: 45, title: 'Products' },
-    { width: 340, height: 240, x: 133, title: 'Features' },
-    { width: 200, height: 240, x: 198, title: 'About' },
+    { width: 440, height: 240, x: -140, title: 'Products' },
+    { width: 340, height: 240, x: 5, title: 'Features' },
+    { width: 200, height: 240, x: 130, title: 'About' },
+    { width: 370, height: 240, x: 255, title: 'My Account' },
   ];
 
   const handleNavLeave = () => setNavIndex(-1);
 
   return (
-    <header onMouseLeave={handleNavLeave} className='relative w-2/5'>
+    <div onMouseLeave={handleNavLeave} className='relative w-2/5'>
       <nav>
-        <ul
-          className={`flex justify-evenly items-center text-md font-semibold ${
-            inView ? 'text-white' : 'text-purple-600'
-          }`}
-        >
+        <ul className={`flex justify-evenly items-center text-md`}>
           {navItems.map((n, i) => {
             return (
               <li
                 key={n.title}
                 onMouseEnter={() => setNavIndex(i)}
+                style={{ margin: inView ? '1rem 0' : '1.5rem 0' }}
                 className='relative flex items-center hover:opacity-50 px-4'
               >
                 <h3 className='pr-1'>{n.title}</h3>
@@ -52,36 +49,38 @@ export const HeaderNav = ({ inView }: { inView: boolean }) => {
               </li>
             );
           })}
-          <li className='flex items-center hover:opacity-50 cursor-pointer'>
-            <h3 className='mx-4'>Partners</h3>
-          </li>
-          <li className='cursor-pointer ml-4'>
-            <MdAccountCircle size={28} />
-          </li>
         </ul>
       </nav>
 
-      {navIndex !== -1 && <HeaderBox info={navItems[navIndex]} />}
-    </header>
+      {navIndex !== -1 && <NavDropDown info={navItems[navIndex]} />}
+    </div>
   );
 };
 
-const HeaderBox = ({ info }: { info: NavItem }) => {
+const boxVariants = {
+  hidden: (info: NavItem) => ({
+    translateX: `${info.x}px`,
+    scaleX: info.width / 384,
+    scaleY: info.height / 240,
+  }),
+  visible: (info: NavItem) => ({
+    translateX: `${info.x}px`,
+    scaleX: info.width / 384,
+    scaleY: info.height / 240,
+    transition: { ease: 'easeOut' },
+  }),
+};
+
+const NavDropDown = ({ info }: { info: NavItem }) => {
   return (
-    <div className='relative -top-4 left-0'>
+    <div className='absolute right-0 left-0'>
       <motion.div
-        initial={{
-          translateX: `${info.x}px`,
-          scaleX: info.width / 384,
-          scaleY: info.height / 240,
-        }}
-        animate={{
-          translateX: `${info.x}px`,
-          scaleX: info.width / 384,
-          scaleY: info.height / 240,
-          transition: { ease: 'easeOut' },
-        }}
-        className='absolute top-4 left-0 h-60 w-96 bg-white shadow-md rounded-md'
+        variants={boxVariants}
+        initial='hidden'
+        animate='visible'
+        custom={info}
+        style={{ position: 'absolute', top: '1px', left: '0' }}
+        className='h-60 w-96 bg-white border border-gray-200 shadow-xl rounded-md'
       ></motion.div>
 
       {renderNavContent(info)}
@@ -96,8 +95,14 @@ const renderNavContent = (info: NavItem) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { ease: 'linear' } }}
-          style={{ height: info.height, width: info.width }}
-          className='absolute top-2 left-8 px-4 flex flex-col justify-evenly'
+          style={{
+            height: info.height,
+            width: info.width,
+            position: 'absolute',
+            top: '.25rem',
+            left: '-10rem',
+          }}
+          className='px-4 flex flex-col justify-evenly'
         >
           <div className='flex cursor-pointer hover:opacity-70'>
             <div className='h-12 w-12 flex items-center justify-center bg-blue-300 rounded-full'>
@@ -118,7 +123,7 @@ const renderNavContent = (info: NavItem) => {
             <div className='flex flex-col ml-4'>
               <h3 className='text-lg font-bold text-green-500'>Laudantium</h3>
               <p className='text-sm font-light text-gray-600'>
-                Animi laudantium quae ea sit. Lorem ipsum dolor.
+                Animi laudantium quae, ea sit Lorem ipsum.
               </p>
             </div>
           </div>
@@ -142,8 +147,14 @@ const renderNavContent = (info: NavItem) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { ease: 'linear' } }}
-          style={{ height: info.height, width: info.width }}
-          className='absolute top-2 left-40 px-12 py-4 flex flex-col justify-evenly'
+          style={{
+            height: info.height,
+            width: info.width,
+            position: 'absolute',
+            top: '.25rem',
+            left: '1.5rem',
+          }}
+          className='px-12 py-4 flex flex-col justify-evenly'
         >
           <div className='flex flex-col mb-4'>
             <h3 className='text-2xl font-bold text-purple-600'>Architecto</h3>
@@ -187,8 +198,14 @@ const renderNavContent = (info: NavItem) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { ease: 'linear' } }}
-          style={{ height: info.height, width: info.width }}
-          className='absolute text-sm top-2 left-72 px-4 flex flex-col justify-evenly'
+          style={{
+            height: info.height,
+            width: info.width,
+            position: 'absolute',
+            top: '.25rem',
+            left: '14rem',
+          }}
+          className='text-sm px-4 flex flex-col justify-evenly'
         >
           <a href='#' className='flex items-center hover:opacity-75'>
             <MdInfo size={20} color={'#6C63FF'} />
@@ -224,6 +241,31 @@ const renderNavContent = (info: NavItem) => {
               Nesciunt dicta
             </h3>
           </a>
+        </motion.div>
+      );
+
+    case 'My Account':
+      return (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { ease: 'linear' } }}
+          style={{
+            height: info.height,
+            width: info.width,
+            position: 'absolute',
+            top: '.25rem',
+            left: '16.5rem',
+          }}
+          className='text-sm px-4 flex flex-col justify-evenly items-center'
+        >
+          <h3 className='text-xl font-bold text-purple-700'>Manage Account</h3>
+
+          <button className='w-5/6 bg-white text-purple-800 font-bold hover:opacity-75 border-2 border-purple-800 rounded-md py-3'>
+            Log In
+          </button>
+          <button className='w-5/6 bg-purple-600 font-bold text-white hover:bg-purple-700 border-purple-800 rounded-md py-3'>
+            Contact Sales
+          </button>
         </motion.div>
       );
 

@@ -45,21 +45,21 @@ const modalVariants = {
   },
 };
 
-const locs: Coords[] = [
-  { x: 145, y: 215, city: 'Los Angeles, CA' },
-  { x: 205, y: 225, city: 'Austin, TX' },
-  { x: 245, y: 170, city: 'Chicago, IL' },
-  { x: 270, y: 250, city: 'Miami, FL' },
-  { x: 285, y: 195, city: 'New York, NY' },
-  { x: 520, y: 140, city: 'London, UK' },
-  { x: 535, y: 165, city: 'Paris, FR' },
-  { x: 855, y: 325, city: 'Singapore, MY' },
-  { x: 1000, y: 445, city: 'Syndey, AU' },
-  { x: 970, y: 205, city: 'Tokyo, JP' },
-];
-
 export const MapDots = ({ inView }: { inView: boolean }) => {
   const [count, setCount] = useState(0);
+
+  const locs: Coords[] = [
+    { x: 145, y: 215, city: 'Los Angeles, CA' },
+    { x: 205, y: 225, city: 'Austin, TX' },
+    { x: 245, y: 170, city: 'Chicago, IL' },
+    { x: 270, y: 250, city: 'Miami, FL' },
+    { x: 285, y: 195, city: 'New York, NY' },
+    { x: 520, y: 140, city: 'London, UK' },
+    { x: 535, y: 165, city: 'Paris, FR' },
+    { x: 855, y: 325, city: 'Singapore, MY' },
+    { x: 1000, y: 445, city: 'Syndey, AU' },
+    { x: 970, y: 205, city: 'Tokyo, JP' },
+  ];
 
   useEffect(() => {
     let timer: any;
@@ -70,9 +70,7 @@ export const MapDots = ({ inView }: { inView: boolean }) => {
       }, 90);
     }
 
-    return () => {
-      clearTimeout(timer);
-    };
+    return () => clearTimeout(timer);
   }, [inView, count]);
 
   return (
