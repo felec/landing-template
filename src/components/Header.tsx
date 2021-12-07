@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import { useAnimation, motion } from 'framer-motion';
 
 import { HeaderNav } from './HeaderNav';
-import { ReactComponent as Logo } from '../assets/company_logo.svg';
+import { ReactComponent as Logo } from '../assets/svgs/company_logo.svg';
 
 export const Header = () => {
   const anim = useAnimation();

@@ -4,7 +4,7 @@ import { HeaderCardList } from './components/HeaderCardList';
 import { MapSection } from './components/MapSection';
 import { SignUpForm } from './components/SignUpForm';
 import { TabsSection } from './components/TabsSection';
-import Background from './assets/header_bg.svg';
+import Background from './assets/svgs/header_bg.svg';
 
 function App() {
   return (
@@ -38,6 +38,7 @@ function App() {
       <MapSection />
 
       <TabsSection />
+      <div className='h-96 border-t-2 my-20'></div>
     </div>
   );
 }

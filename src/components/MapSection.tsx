@@ -1,13 +1,13 @@
 import { useInView } from 'react-intersection-observer';
 
 import { MapDots } from './MapDots';
-import { ReactComponent as Map } from '../assets/map.svg';
+import { ReactComponent as Map } from '../assets/svgs/map.svg';
 
 export const MapSection = () => {
-  const [mapRef, mapInView] = useInView({ threshold: 0.75, triggerOnce: true });
+  const [mapRef, mapInView] = useInView({ threshold: 0.5, triggerOnce: true });
 
   return (
-    <section className='flex flex-col items-center mt-28'>
+    <section className='flex flex-col items-center my-20'>
       <h2 className='flex text-4xl font-bold'>
         Provident illo, sit dolorum culpa{' '}
         <span className='text-lg self-start'>®</span>

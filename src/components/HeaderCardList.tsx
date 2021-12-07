@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-import { ReactComponent as Coin } from '../assets/coin.svg';
-import { ReactComponent as Crypto } from '../assets/crypto.svg';
-import { ReactComponent as Pay } from '../assets/pay.svg';
-import { ReactComponent as Security } from '../assets/security.svg';
+import { ReactComponent as Coin } from '../assets/svgs/coin.svg';
+import { ReactComponent as Crypto } from '../assets/svgs/crypto.svg';
+import { ReactComponent as Pay } from '../assets/svgs/pay.svg';
+import { ReactComponent as Security } from '../assets/svgs/security.svg';
 
 interface Content {
   image: any;
@@ -31,14 +31,15 @@ const imgVariants = {
     opacity: 0,
     translateY: 20,
   },
-  animate: {
+  animate: (i: number) => ({
     opacity: 1,
     translateY: 0,
     transition: {
       duration: 0.75,
       ease: 'easeOut',
+      delay: i * 0.2,
     },
-  },
+  }),
 };
 
 export const HeaderCardList = () => {
@@ -80,15 +81,15 @@ export const HeaderCardList = () => {
   ];
 
   return (
-    <section className='flex justify-evenly my-28 px-12'>
-      {cards.map((c) => (
-        <Card key={c.title} content={c} />
+    <section className='flex justify-evenly my-20 px-12'>
+      {cards.map((c, i) => (
+        <Card key={c.title} content={c} idx={i} />
       ))}
     </section>
   );
 };
 
-const Card = ({ content }: { content: Content }) => {
+const Card = ({ content, idx }: { content: Content; idx: number }) => {
   const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
 
   return (
@@ -101,7 +102,12 @@ const Card = ({ content }: { content: Content }) => {
       className='flex flex-col items-center justify-end p-4 rounded-md shadow-md hover:shadow-2xl bg-white cursor-pointer'
     >
       {inView ? (
-        <motion.div initial='initial' animate='animate' variants={imgVariants}>
+        <motion.div
+          initial='initial'
+          animate='animate'
+          variants={imgVariants}
+          custom={idx}
+        >
           {content.image}
         </motion.div>
       ) : (
