@@ -5,10 +5,18 @@ import {
   MdCheckBox,
   MdCheckBoxOutlineBlank,
   MdFiberNew,
+  MdKeyboardArrowDown,
+  MdMediation,
   MdOutlineAddchart,
   MdOutlineAutoStories,
   MdOutlineFileDownloadDone,
+  MdOutlineHistory,
+  MdWbCloudy,
+  MdWatchLater,
+  MdLock,
+  MdNotifications,
 } from 'react-icons/md';
+import { AiOutlineBarChart } from 'react-icons/ai';
 
 import Dash1 from '../assets/images/dash_1.jpg';
 import Dash2 from '../assets/images/dash_2.jpg';
@@ -20,6 +28,20 @@ interface TabItem {
   main: string;
   content: string;
 }
+
+const tabVariants = {
+  initial: {
+    scaleX: 1,
+    scaleY: 1,
+  },
+  selected: {
+    scaleX: 1,
+    scaleY: 1,
+    transition: {
+      ease: 'linear',
+    },
+  },
+};
 
 export const TabsSection = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -72,7 +94,7 @@ export const TabsSection = () => {
     >
       <div
         style={{ height: '30rem', width: '30rem' }}
-        className='absolute top-40 -right-72 transform rotate-45 bg-purple-700 rounded-md'
+        className='absolute top-32 -right-72 transform rotate-45 bg-purple-700 rounded-md'
       ></div>
 
       <div className='flex flex-col items-center self-center'>
@@ -87,17 +109,24 @@ export const TabsSection = () => {
           {tabItems.map((t, i) => {
             return (
               <motion.div
+                layout
                 key={t.title}
                 onClick={() => handleTabClick(i)}
-                className='flex items-center h-24 w-80 my-2 p-4 bg-white border border-gray-200 hover:border-purple-600 rounded-md cursor-pointer'
+                style={{
+                  height: tabIndex === i ? '12rem' : '6rem',
+                  width: '20rem',
+                }}
+                className='flex flex-col my-2 p-4 bg-white border border-gray-200 hover:border-purple-600 rounded-md cursor-pointer'
               >
-                <div className='p-1 rounded-md bg-gray-100'>{t.icon}</div>
-                <h3 className='text-lg font-medium ml-4'>{t.title}</h3>
+                <div className='flex items-center'>
+                  <div className='p-1 rounded-md bg-gray-100'>{t.icon}</div>
+                  <h3 className='text-lg font-medium ml-4'>{t.title}</h3>
+                </div>
               </motion.div>
             );
           })}
         </div>
-        {renderTabImages(tabIndex)}
+        {tabsInView && renderTabImages(tabIndex)}
       </div>
     </section>
   );
@@ -118,6 +147,22 @@ const dashVariants = {
   },
 };
 
+const panelVariants = {
+  hidden: {
+    opacity: 0,
+    translateY: 50,
+  },
+  selected: {
+    opacity: 1,
+    translateY: 0,
+    transition: {
+      delay: 0.4,
+      duration: 0.8,
+      ease: 'easeIn',
+    },
+  },
+};
+
 const renderTabImages = (i: number) => {
   return (
     <motion.div initial='hidden' animate='selected'>
@@ -127,16 +172,25 @@ const renderTabImages = (i: number) => {
           className='absolute top-36 right-20 border-t shadow-2xl'
         >
           <img src={Dash1} alt='dashboard' />
-          <motion.div className='absolute top-1/2 -left-16 flex items-center p-4 border bg-white shadow-md rounded-md'>
+
+          <motion.div
+            variants={panelVariants}
+            className='absolute top-1/2 -left-16 flex items-center p-4 border bg-white shadow-md rounded-md'
+          >
             <MdFiberNew size={50} color='#7933BF' />
             <div className='ml-2'>
-              <h3 className='text-sm'>Officiis odio</h3>
+              <h3 className='text-sm font-semibold'>Officiis odio</h3>
               <p className='text-xs text-gray-400'>lorem cupiditate tempori</p>
             </div>
           </motion.div>
 
-          <motion.div className='absolute top-1/4 -right-16 flex flex-col justify-evenly h-48 w-48 pl-4 py-4 border text-xs text-gray-500 bg-white shadow-md rounded-md'>
-            <h3 className='text-black font-semibold mb-2'>Optio Solutami</h3>
+          <motion.div
+            variants={panelVariants}
+            className='absolute top-1/4 -right-24 flex flex-col justify-evenly h-48 w-60 px-4 py-4 border text-xs text-gray-500 bg-white shadow-md rounded-md'
+          >
+            <h3 className='text-sm text-black font-semibold mb-2'>
+              Optio Solutami
+            </h3>
             <div className='flex items-center'>
               <MdCheckBoxOutlineBlank size={16} />
               <p className='ml-2'>Omnis illum </p>
@@ -166,6 +220,44 @@ const renderTabImages = (i: number) => {
           className='absolute top-36 right-20 border-t shadow-2xl'
         >
           <img src={Dash2} alt='dashboard' />
+
+          <motion.div
+            variants={panelVariants}
+            className='absolute top-1/2 -left-16 flex flex-col items-center p-4 border bg-white shadow-md rounded-md'
+          >
+            <div className='flex text-gray-400 mb-2'>
+              <AiOutlineBarChart size={15} color='#5A5494' />
+              <h3 className='text-xs text-purple-800 font-semibold ml-2 mr-16'>
+                Reports
+              </h3>
+              <MdKeyboardArrowDown size={15} color='#5A5494' />
+            </div>
+
+            <div className='flex flex-col self-stretch text-xs text-gray-400 px-1'>
+              <div className='flex items-center justify-between'>
+                <p>December</p>
+                <div className='h-2 w-2 rounded-full bg-red-400'></div>
+              </div>
+              <div className='w-full border my-1'></div>
+              <div className='flex items-center justify-between'>
+                <p>November</p>
+                <div className='h-2 w-2 rounded-full bg-green-400'></div>
+              </div>
+              <div className='w-full border my-1'></div>
+              <div className='flex items-center justify-between'>
+                <p>October</p>
+                <div className='h-2 w-2 rounded-full bg-green-400'></div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            variants={panelVariants}
+            className='absolute top-1/4 -right-24 flex flex-col justify-center items-center h-36 w-36 border text-xs text-gray-500 bg-white shadow-md rounded-md'
+          >
+            <MdOutlineHistory size={70} color='#7933BF' />
+            <p className='text-xs text-gray-400 mt-2'>Lusto Autem</p>
+          </motion.div>
         </motion.div>
       )}
 
@@ -175,6 +267,52 @@ const renderTabImages = (i: number) => {
           className='absolute top-36 right-20 border-t shadow-2xl'
         >
           <img src={Dash3} alt='dashboard' />
+
+          <motion.div
+            variants={panelVariants}
+            className='absolute top-1/2 -left-16 flex flex-col p-4 border bg-white shadow-md rounded-md'
+          >
+            <h3 className='text-sm font-semibold'>Vero Explicabo</h3>
+
+            <div className='flex justify-between text-xs text-gray-500 py-2 px-2 my-2 border rounded-sm'>
+              <p>Esse sint, amet...</p>
+              <MdKeyboardArrowDown size={15} color='#5A5494' />
+            </div>
+
+            <button className='text-sm text-white py-2 px-12 bg-purple-700 rounded-sm'>
+              Upgrade
+            </button>
+          </motion.div>
+
+          <motion.div
+            variants={panelVariants}
+            className='absolute top-1/4 -right-24 flex flex-col justify-evenly h-40 w-40 pl-4 py-4 border text-xs text-gray-500 bg-white shadow-md rounded-md'
+          >
+            <div className='flex items-center'>
+              <MdLock size={16} color='#B2B5BF' />
+              <p className='ml-2'>Impedit Nesci</p>
+            </div>
+
+            <div className='flex items-center'>
+              <MdWatchLater size={16} color='#B2B5BF' />
+              <p className='ml-2'>Rerum Iste</p>
+            </div>
+
+            <div className='flex items-center'>
+              <MdMediation size={16} color='#B2B5BF' />
+              <p className='ml-2'>Aperiam Non</p>
+            </div>
+
+            <div className='flex items-center'>
+              <MdWbCloudy size={16} color='#B2B5BF' />
+              <p className='ml-2'>Eligendi Harum</p>
+            </div>
+
+            <div className='flex items-center'>
+              <MdNotifications size={16} color='#B2B5BF' />
+              <p className='ml-2'>Eius Natus</p>
+            </div>
+          </motion.div>
         </motion.div>
       )}
     </motion.div>
