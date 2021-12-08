@@ -1,5 +1,6 @@
 import { Banner } from './components/Banner';
 import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import { HeaderCardList } from './components/HeaderCardList';
 import { MapSection } from './components/MapSection';
 import { SignUpForm } from './components/SignUpForm';
@@ -41,6 +42,8 @@ function App() {
       <TabsSection />
 
       <InfoSection />
+
+      <Footer />
     </div>
   );
 }
