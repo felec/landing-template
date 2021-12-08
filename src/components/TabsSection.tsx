@@ -29,20 +29,6 @@ interface TabItem {
   content: string;
 }
 
-const tabVariants = {
-  initial: {
-    scaleX: 1,
-    scaleY: 1,
-  },
-  selected: {
-    scaleX: 1,
-    scaleY: 1,
-    transition: {
-      ease: 'linear',
-    },
-  },
-};
-
 export const TabsSection = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [tabsRef, tabsInView] = useInView({
@@ -58,8 +44,7 @@ export const TabsSection = () => {
       content: `
     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
     Temporibus dolor velit, qui molestias cum dolore est dicta alias 
-    explicabo excepturi quaerat quisquam et quae modi pariatur 
-    neque ad doloremque aut.
+    explicabo excepturi quaerat.
     `,
     },
     {
@@ -68,8 +53,7 @@ export const TabsSection = () => {
       icon: <MdOutlineFileDownloadDone size={35} color='#7933bf' />,
       content: `
     Repudiandae inventore ad a ducimus. Nesciunt quidem tempore nemo hic illo
-    impedit dignissimos distinctio accusantium eveniet nisi, expedita tenetur 
-    enim deleniti rem ea unde eligendi, exercitationem soluta. Eius, id.
+    impedit dignissimos enim deleniti rem ea unde eligendi.
     `,
     },
     {
@@ -78,8 +62,7 @@ export const TabsSection = () => {
       icon: <MdOutlineAddchart size={35} color='#7933bf' />,
       content: `
     Eveniet optio quod maxime ratione, quos possimus aliquam ea porro animi
-    omnis consectetur veniam molestiae nobis asperiores! 
-    Quae accusantium dolor ex libero at minima omnis consequatur possimus minus.
+    omnis consectetur veniam molestiae nobis asperiores. Quae accusantium.
     `,
     },
   ];
@@ -105,23 +88,30 @@ export const TabsSection = () => {
       </div>
 
       <div className='mx-24'>
-        <div className='relative flex flex-col my-4'>
+        <div className='flex flex-col my-4'>
           {tabItems.map((t, i) => {
             return (
               <motion.div
                 layout
                 key={t.title}
                 onClick={() => handleTabClick(i)}
-                style={{
-                  height: tabIndex === i ? '12rem' : '6rem',
-                  width: '20rem',
-                }}
-                className='flex flex-col my-2 p-4 bg-white border border-gray-200 hover:border-purple-600 rounded-md cursor-pointer'
+                className='flex flex-col justify-center w-80 my-2 p-4 bg-white border border-gray-200 hover:border-purple-600 rounded-md cursor-pointer'
               >
-                <div className='flex items-center'>
+                <motion.div layout className='flex items-center mb-2'>
                   <div className='p-1 rounded-md bg-gray-100'>{t.icon}</div>
+
                   <h3 className='text-lg font-medium ml-4'>{t.title}</h3>
-                </div>
+                </motion.div>
+
+                {tabIndex === i && (
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className='text-base font-thin text-gray-600 overflow-hidden'
+                  >
+                    {t.content}
+                  </motion.p>
+                )}
               </motion.div>
             );
           })}
@@ -171,7 +161,7 @@ const renderTabImages = (i: number) => {
           variants={dashVariants}
           className='absolute top-36 right-20 border-t shadow-2xl'
         >
-          <img src={Dash1} alt='dashboard' />
+          <img style={{ objectFit: 'cover' }} src={Dash1} alt='dashboard' />
 
           <motion.div
             variants={panelVariants}
@@ -219,7 +209,7 @@ const renderTabImages = (i: number) => {
           variants={dashVariants}
           className='absolute top-36 right-20 border-t shadow-2xl'
         >
-          <img src={Dash2} alt='dashboard' />
+          <img style={{ objectFit: 'cover' }} src={Dash2} alt='dashboard' />
 
           <motion.div
             variants={panelVariants}
@@ -266,7 +256,7 @@ const renderTabImages = (i: number) => {
           variants={dashVariants}
           className='absolute top-36 right-20 border-t shadow-2xl'
         >
-          <img src={Dash3} alt='dashboard' />
+          <img style={{ objectFit: 'cover' }} src={Dash3} alt='dashboard' />
 
           <motion.div
             variants={panelVariants}

@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { HeaderCardList } from './components/HeaderCardList';
 import { MapSection } from './components/MapSection';
 import { SignUpForm } from './components/SignUpForm';
+import { InfoSection } from './components/InfoSection';
 import { TabsSection } from './components/TabsSection';
 import Background from './assets/svgs/header_bg.svg';
 
@@ -38,7 +39,8 @@ function App() {
       <MapSection />
 
       <TabsSection />
-      <div className='h-96 border-t-2 my-20'></div>
+
+      <InfoSection />
     </div>
   );
 }
