@@ -89,12 +89,12 @@ const NavDropDown = ({ info }: { info: NavItem }) => {
 };
 
 const renderNavContent = (info: NavItem) => {
-  switch (info.title) {
-    case 'Products':
-      return (
+  return (
+    <>
+      {info.title === 'Products' && (
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { ease: 'linear' } }}
+          animate={{ opacity: 1, transition: { ease: 'linear', delay: 0.1 } }}
           style={{
             height: info.height,
             width: info.width,
@@ -140,13 +140,12 @@ const renderNavContent = (info: NavItem) => {
             </div>
           </div>
         </motion.div>
-      );
+      )}
 
-    case 'Features':
-      return (
+      {info.title === 'Features' && (
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { ease: 'linear' } }}
+          animate={{ opacity: 1, transition: { ease: 'linear', delay: 0.1 } }}
           style={{
             height: info.height,
             width: info.width,
@@ -191,13 +190,12 @@ const renderNavContent = (info: NavItem) => {
             </div>
           </div>
         </motion.div>
-      );
+      )}
 
-    case 'About':
-      return (
+      {info.title === 'About' && (
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { ease: 'linear' } }}
+          animate={{ opacity: 1, transition: { ease: 'linear', delay: 0.1 } }}
           style={{
             height: info.height,
             width: info.width,
@@ -242,13 +240,12 @@ const renderNavContent = (info: NavItem) => {
             </h3>
           </a>
         </motion.div>
-      );
+      )}
 
-    case 'My Account':
-      return (
+      {info.title === 'My Account' && (
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { ease: 'linear' } }}
+          animate={{ opacity: 1, transition: { ease: 'linear', delay: 0.1 } }}
           style={{
             height: info.height,
             width: info.width,
@@ -267,9 +264,7 @@ const renderNavContent = (info: NavItem) => {
             Contact Sales
           </button>
         </motion.div>
-      );
-
-    default:
-      break;
-  }
+      )}
+    </>
+  );
 };

@@ -1,7 +1,7 @@
 import { useInView } from 'react-intersection-observer';
 
 import { MapDots } from './MapDots';
-import { ReactComponent as Map } from '../assets/svgs/map.svg';
+import { ReactComponent as Map } from '../../assets/svgs/map.svg';
 
 export const MapSection = () => {
   const [mapRef, mapInView] = useInView({ threshold: 0.5, triggerOnce: true });

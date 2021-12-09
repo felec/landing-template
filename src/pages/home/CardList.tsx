@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-import { ReactComponent as Coin } from '../assets/svgs/coin.svg';
-import { ReactComponent as Crypto } from '../assets/svgs/crypto.svg';
-import { ReactComponent as Pay } from '../assets/svgs/pay.svg';
-import { ReactComponent as Security } from '../assets/svgs/security.svg';
+import { ReactComponent as Coin } from '../../assets/svgs/coin.svg';
+import { ReactComponent as Crypto } from '../../assets/svgs/crypto.svg';
+import { ReactComponent as Pay } from '../../assets/svgs/pay.svg';
+import { ReactComponent as Security } from '../../assets/svgs/security.svg';
 
 interface Content {
   image: any;
@@ -42,7 +42,7 @@ const imgVariants = {
   }),
 };
 
-export const HeaderCardList = () => {
+export const CardList = () => {
   const cards = [
     {
       image: <Coin />,

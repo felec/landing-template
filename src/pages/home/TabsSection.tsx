@@ -18,9 +18,9 @@ import {
 } from 'react-icons/md';
 import { AiOutlineBarChart } from 'react-icons/ai';
 
-import Dash1 from '../assets/images/dash_1.jpg';
-import Dash2 from '../assets/images/dash_2.jpg';
-import Dash3 from '../assets/images/dash_3.jpg';
+import Dash1 from '../../assets/images/dash_1.jpg';
+import Dash2 from '../../assets/images/dash_2.jpg';
+import Dash3 from '../../assets/images/dash_3.jpg';
 
 interface TabItem {
   title: string;
@@ -77,7 +77,7 @@ export const TabsSection = () => {
     >
       <div
         style={{ height: '30rem', width: '30rem' }}
-        className='absolute top-32 -right-72 transform rotate-45 bg-purple-700 rounded-md'
+        className='absolute top-36 -right-72 transform rotate-45 bg-purple-700 rounded-md'
       ></div>
 
       <div className='flex flex-col items-center self-center'>

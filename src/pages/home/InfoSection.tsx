@@ -1,3 +1,5 @@
+import { Triangles } from '../../components/Triangles';
+
 interface InfoItem {
   icon: any;
   info: string;
@@ -8,7 +10,7 @@ export const InfoSection = () => {
   const infoItems: InfoItem[] = [
     {
       title: 'Rem similique vel',
-      icon: '',
+      icon: Triangles,
       info: `
       Atque quam distinctio architecto amet laudantium vitae, 
       quidem excepturi qui ducimus recusandae, suscipit vel aspernatur
@@ -52,7 +54,7 @@ export const InfoSection = () => {
       <div className='flex'>
         {infoItems.map((i) => {
           return (
-            <div key={i.title} className='flex flex-col text-sm w-80 mr-8'>
+            <div key={i.title} className='flex flex-col text-sm mr-8'>
               <div className='flex'>
                 {i.icon}
                 <h4 className='font-semibold mb-2'>{i.title}</h4>
