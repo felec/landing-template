@@ -1,36 +1,78 @@
+import { motion } from 'framer-motion';
+
 export const Triangles = () => {
   return (
-    <svg
-      width='120'
-      height='100'
-      viewBox='0 0 120 100'
+    <motion.svg
+      initial='stop'
+      animate='play'
+      width='90'
+      height='45'
+      viewBox='0 0 90 45'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
       <g id='triangles'>
-        <g id='darkGroup'>
-          <path
-            id='dark1'
-            d='M54 48.2679C55.3333 49.0377 55.3333 50.9623 54 51.7321L28.5 66.4545C27.1667 67.2243 25.5 66.262 25.5 64.7224L25.5 35.2776C25.5 33.738 27.1667 32.7757 28.5 33.5455L54 48.2679Z'
-            // fill='#A400F1'
-            fill-opacity='0.5'
-          />
-          <path
-            id='dark2'
-            d='M39 48.2679C40.3333 49.0377 40.3333 50.9623 39 51.7321L13.5 66.4545C12.1667 67.2243 10.5 66.262 10.5 64.7224L10.5 35.2776C10.5 33.738 12.1667 32.7757 13.5 33.5455L39 48.2679Z'
-            // fill='#A400F1'
-            fill-opacity='0.5'
-          />
-        </g>
-        <g id='lightGroup'>
-          <path
-            id='light1'
-            d='M39 48.2679C40.3333 49.0377 40.3333 50.9623 39 51.7321L13.5 66.4545C12.1667 67.2243 10.5 66.262 10.5 64.7224L10.5 35.2776C10.5 33.738 12.1667 32.7757 13.5 33.5455L39 48.2679Z'
-            // fill='#E05E00'
-            fill-opacity='0.5'
-          />
-        </g>
+        <motion.path
+          id='dark2'
+          variants={{
+            stop: {
+              translateX: '-100%',
+              opacity: 0.75,
+            },
+            play: {
+              translateX: '0%',
+              transition: {
+                duration: 0.5,
+                ease: 'easeOut',
+                repeat: Infinity,
+                repeatDelay: 4,
+              },
+            },
+          }}
+          d='M31 20.2679C32.3333 21.0377 32.3333 22.9623 31 23.7321L5.5 38.4545C4.16667 39.2243 2.5 38.262 2.5 36.7224L2.5 7.27757C2.5 5.73797 4.16667 4.77572 5.5 5.54552L31 20.2679Z'
+          fill='#7f00ff'
+        />
+        <motion.path
+          id='dark1'
+          variants={{
+            stop: {
+              opacity: 0.75,
+            },
+            play: {
+              translateX: '40%',
+              opacity: 0,
+              transition: {
+                duration: 0.5,
+                ease: 'easeOut',
+                repeat: Infinity,
+                repeatDelay: 4,
+              },
+            },
+          }}
+          d='M46 20.2679C47.3333 21.0377 47.3333 22.9623 46 23.7321L20.5 38.4545C19.1667 39.2243 17.5 38.262 17.5 36.7224L17.5 7.27757C17.5 5.73797 19.1667 4.77572 20.5 5.54552L46 20.2679Z'
+          fill='#7f00ff'
+        />
+        <motion.path
+          id='light1'
+          variants={{
+            stop: {
+              opacity: 0.75,
+            },
+            play: {
+              translateX: '20%',
+              transition: {
+                type: 'tween',
+                duration: 0.5,
+                ease: 'easeOut',
+                repeat: Infinity,
+                repeatDelay: 4,
+              },
+            },
+          }}
+          d='M31 20.2679C32.3333 21.0377 32.3333 22.9623 31 23.7321L5.5 38.4545C4.16667 39.2243 2.5 38.262 2.5 36.7224L2.5 7.27757C2.5 5.73797 4.16667 4.77572 5.5 5.54552L31 20.2679Z'
+          fill='#e500ff'
+        />
       </g>
-    </svg>
+    </motion.svg>
   );
 };
