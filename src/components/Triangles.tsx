@@ -17,7 +17,7 @@ export const Triangles = () => {
           variants={{
             stop: {
               translateX: '-100%',
-              opacity: 0.75,
+              opacity: 0.6,
             },
             play: {
               translateX: '0%',
@@ -36,7 +36,7 @@ export const Triangles = () => {
           id='dark1'
           variants={{
             stop: {
-              opacity: 0.75,
+              opacity: 0.6,
             },
             play: {
               translateX: '40%',
@@ -56,7 +56,7 @@ export const Triangles = () => {
           id='light1'
           variants={{
             stop: {
-              opacity: 0.75,
+              opacity: 0.6,
             },
             play: {
               translateX: '20%',

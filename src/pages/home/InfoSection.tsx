@@ -1,4 +1,6 @@
+import { Circles } from '../../components/Circles';
 import { Gears } from '../../components/Gears';
+import { Tags } from '../../components/Tags';
 import { Triangles } from '../../components/Triangles';
 
 interface InfoItem {
@@ -29,7 +31,7 @@ export const InfoSection = () => {
     },
     {
       title: 'Blanditiis perferendis',
-      icon: '',
+      icon: <Circles />,
       info: `
       Mollitia alias cupiditate ipsam blanditiis iure ullam? Quos commodi exercitationem
       Fugit accusantium provident consequatur non voluptatem, perferendis.
@@ -37,7 +39,7 @@ export const InfoSection = () => {
     },
     {
       title: 'Temporibus perspiciatis',
-      icon: '',
+      icon: <Tags />,
       info: `
       Voluptas odit pariatur assumenda eum laboriosam fugit. Soluta quis dignissimos libero nobis. 
       Quos voluptate, eum ut voluptatum magnam.
@@ -46,17 +48,17 @@ export const InfoSection = () => {
   ];
 
   return (
-    <section className='flex flex-col px-24 my-20'>
+    <section className='flex flex-col px-24 mt-20 mb-40'>
       <h2 className='text-base font-semibold text-purple-600'>Why Company</h2>
-      <h3 className='text-3xl font-bold w-3/5 mt-4'>
+      <h3 className='text-3xl font-bold mt-4'>
         Vero minus nemo harum sunt itaque delectus
       </h3>
 
-      <div className='flex'>
+      <div className='flex h-5/6'>
         {infoItems.map((i) => {
           return (
             <div key={i.title} className='flex flex-col text-sm mr-8'>
-              {i.icon}
+              <div className='my-8'>{i.icon}</div>
               <div className='flex'>
                 <h4 className='font-semibold mb-2'>{i.title}</h4>
               </div>
