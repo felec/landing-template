@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-import { ReactComponent as Coin } from '../../assets/svgs/coin.svg';
-import { ReactComponent as Crypto } from '../../assets/svgs/crypto.svg';
-import { ReactComponent as Pay } from '../../assets/svgs/pay.svg';
-import { ReactComponent as Security } from '../../assets/svgs/security.svg';
+import { Cards } from '../../components/Cards';
+import { Crypto } from '../../components/Crypto';
+import { Macbook } from '../../components/Macbook';
+import { Shield } from '../../components/Shield';
 
 interface Content {
   image: any;
@@ -14,7 +14,7 @@ interface Content {
 }
 
 const cardVariants = {
-  initial: {
+  normal: {
     translateY: 10,
   },
   hover: {
@@ -27,7 +27,7 @@ const cardVariants = {
 };
 
 const imgVariants = {
-  initial: {
+  normal: {
     opacity: 0,
     translateY: 20,
   },
@@ -45,7 +45,7 @@ const imgVariants = {
 export const CardList = () => {
   const cards = [
     {
-      image: <Coin />,
+      image: <Crypto />,
       price: 5.0,
       title: 'Consectetur',
       subTitle: `
@@ -53,7 +53,7 @@ export const CardList = () => {
       Recusandae, sequi voluptate reprehenderit.`,
     },
     {
-      image: <Pay />,
+      image: <Cards />,
       price: 25.0,
       title: 'Elit Pariatur',
       subTitle: `
@@ -61,7 +61,7 @@ export const CardList = () => {
       `,
     },
     {
-      image: <Crypto />,
+      image: <Macbook />,
       price: 75.0,
       title: 'Adipisicing',
       subTitle: `
@@ -70,7 +70,7 @@ export const CardList = () => {
       `,
     },
     {
-      image: <Security />,
+      image: <Shield />,
       price: 100.0,
       title: 'Lorem Ipsum',
       subTitle: `
@@ -96,14 +96,14 @@ const Card = ({ content, idx }: { content: Content; idx: number }) => {
     <motion.div
       ref={ref}
       variants={cardVariants}
-      initial='initial'
+      initial='normal'
       whileHover='hover'
       style={{ height: '28rem', width: '18rem' }}
       className='flex flex-col items-center justify-end p-4 rounded-md shadow-md hover:shadow-2xl bg-white cursor-pointer'
     >
       {inView ? (
         <motion.div
-          initial='initial'
+          initial='normal'
           animate='animate'
           variants={imgVariants}
           custom={idx}
