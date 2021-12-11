@@ -1,6 +1,6 @@
 import { Circles } from '../../components/Circles';
 import { Gears } from '../../components/Gears';
-import { Tags } from '../../components/Tags';
+import { Cubes } from '../../components/Cubes';
 import { Triangles } from '../../components/Triangles';
 
 interface InfoItem {
@@ -13,7 +13,7 @@ export const InfoSection = () => {
   const infoItems: InfoItem[] = [
     {
       title: 'Rem similique vel',
-      icon: <Triangles />,
+      icon: <Circles />,
       info: `
       Atque quam distinctio architecto amet laudantium vitae, 
       quidem excepturi qui ducimus recusandae, suscipit vel aspernatur
@@ -22,7 +22,7 @@ export const InfoSection = () => {
     },
     {
       title: 'Quas accusantium libero',
-      icon: <Gears />,
+      icon: <Triangles />,
       info: `
       Rem eum modi iste laboriosam illum nobis esse ea molestias aut in omnis quaerat
       odio vitae voluptatibus. Perferendis, porro aliquam cumque aspernatur
@@ -31,7 +31,7 @@ export const InfoSection = () => {
     },
     {
       title: 'Blanditiis perferendis',
-      icon: <Circles />,
+      icon: <Gears />,
       info: `
       Mollitia alias cupiditate ipsam blanditiis iure ullam? Quos commodi exercitationem
       Fugit accusantium provident consequatur non voluptatem, perferendis.
@@ -39,7 +39,7 @@ export const InfoSection = () => {
     },
     {
       title: 'Temporibus perspiciatis',
-      icon: <Tags />,
+      icon: <Cubes />,
       info: `
       Voluptas odit pariatur assumenda eum laboriosam fugit. Soluta quis dignissimos libero nobis. 
       Quos voluptate, eum ut voluptatum magnam.

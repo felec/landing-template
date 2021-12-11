@@ -46,6 +46,9 @@ export const Footer = () => {
             <a href='#' className='hover:opacity-75 my-1'>
               Ullam
             </a>
+            <a href='#' className='hover:opacity-75 my-1'>
+              Quidem
+            </a>
           </div>
         </div>
 

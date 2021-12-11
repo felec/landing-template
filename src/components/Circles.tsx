@@ -1,36 +1,31 @@
 import { motion } from 'framer-motion';
 
-const beatVariants = {
+const circleVariants = {
   stop: {
-    pathLength: 1,
-    strokeWidth: 4,
+    pathLength: 0,
+    strokeWidth: 2.5,
   },
   play: {
-    pathLength: [0, 1],
+    pathLength: 1,
     transition: {
       duration: 0.75,
       ease: 'easeOut',
       repeat: Infinity,
-      delay: 4,
-      repeatDelay: 2,
+      repeatDelay: 7,
     },
   },
 };
 
-const checkVariants = {
+const heartVariants = {
   stop: {
-    pathLength: 1,
-    strokeWidth: 3,
+    scale: 1,
   },
   play: {
-    pathLength: [0, 1],
+    scale: [1, 0.75, 1.5, 1],
     transition: {
       duration: 0.75,
-
-      ease: 'easeOut',
       repeat: Infinity,
-      delay: 5,
-      repeatDelay: 2,
+      repeatDelay: 7,
     },
   },
 };
@@ -48,30 +43,28 @@ export const Circles = () => {
     >
       <g id='circle1'>
         <path
-          opacity='0.6'
-          d='M24.581 49.9972C38.1567 49.9972 49.162 39.5448 49.162 26.6511C49.162 13.7574 38.1567 3.30502 24.581 3.30502C11.0053 3.30502 0 13.7574 0 26.6511C0 39.5448 11.0053 49.9972 24.581 49.9972Z'
+          opacity='0.7'
+          d='M23.1228 48.9973C35.3409 48.9973 45.2456 39.5902 45.2456 27.9859C45.2456 16.3816 35.3409 6.97451 23.1228 6.97451C10.9047 6.97451 1 16.3816 1 27.9859C1 39.5902 10.9047 48.9973 23.1228 48.9973Z'
           fill='#7F00FF'
         />
         <motion.path
-          variants={beatVariants}
-          d='M0 27.9394H9.77638L12.849 20.6337L20.1115 40.208L26.2568 12.5001L31.564 28.0773L49.1667 27.9394'
+          variants={circleVariants}
+          d='M1 29.1454H9.79871L12.564 22.5703L19.1003 40.1871L24.631 15.25L29.4075 29.2695L45.2499 29.1454'
           stroke='#fff'
-          stroke-width='4'
+          stroke-width='2.5'
         />
       </g>
-      <g id='circle2'>
+      <motion.g variants={heartVariants} id='circle2'>
         <path
           opacity='0.6'
-          d='M40.4329 18.8858C45.7168 18.8858 50.0002 14.658 50.0002 9.44288C50.0002 4.22772 45.7168 0 40.4329 0C35.1491 0 30.8657 4.22772 30.8657 9.44288C30.8657 14.658 35.1491 18.8858 40.4329 18.8858Z'
+          d='M37.3895 20.9971C42.145 20.9971 46 17.1922 46 12.4986C46 7.80494 42.145 4 37.3895 4C32.6341 4 28.779 7.80494 28.779 12.4986C28.779 17.1922 32.6341 20.9971 37.3895 20.9971Z'
           fill='#E50FE5'
         />
-        <motion.path
-          variants={checkVariants}
-          d='M34.6368 9.7879L38.1285 13.0963L45.8097 4.68768'
-          stroke='#fff'
-          stroke-width='3'
+        <path
+          d='M41.6196 12.588C40.8676 13.9923 38.8561 15.9022 37.7185 16.9196C37.5962 17.0268 37.4102 17.0268 37.2879 16.9196C36.1439 15.9022 34.1324 13.9923 33.3804 12.588C31.7287 9.49847 35.8933 7.43878 37.5 10.5283C39.1067 7.43878 43.2713 9.49847 41.6196 12.588Z'
+          fill='#fff'
         />
-      </g>
+      </motion.g>
     </motion.svg>
   );
 };
