@@ -20,7 +20,7 @@ const langVariants = {
 
 export const Banner = () => {
   return (
-    <div className='flex justify-between items-center px-16 py-2 bg-gray-200 z-50'>
+    <div className='flex justify-center lg:justify-between lg:px-16 py-2 bg-gray-200 z-50'>
       <div></div>
 
       <a href='#' className='flex text-sm'>
@@ -30,12 +30,10 @@ export const Banner = () => {
         >
           NEWS
         </div>
-        <p className='pl-2'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit
-        </p>
+        <p className='pl-2'>Lorem ipsum dolor sit amet consectetur</p>
       </a>
 
-      <div className='relative flex items-center text-xs font-thin text-gray-900'>
+      <div className='hidden relative lg:flex items-center text-xs font-thin text-gray-900'>
         <a href='#' className='hover:text-purple-600'>
           Docs
         </a>

@@ -51,7 +51,7 @@ export const Circles = () => {
           variants={circleVariants}
           d='M1 29.1454H9.79871L12.564 22.5703L19.1003 40.1871L24.631 15.25L29.4075 29.2695L45.2499 29.1454'
           stroke='#fff'
-          stroke-width='2.5'
+          strokeWidth='2.5'
         />
       </g>
       <motion.g variants={heartVariants} id='circle2'>

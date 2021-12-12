@@ -20,7 +20,7 @@ export const Footer = () => {
           <h3 className='font-semibold mb-2'>Praesentium</h3>
           <div className='h-full flex flex-col'>
             <a href='#' className='hover:opacity-75 my-1'>
-              Iusto atque
+              Lusto atque
             </a>
             <a href='#' className='hover:opacity-75 my-1'>
               Err sunt
@@ -56,7 +56,7 @@ export const Footer = () => {
           <h3 className='font-semibold mb-2'>Recusandae</h3>
           <div className='h-full flex flex-col'>
             <a href='#' className='hover:opacity-75 my-1'>
-              Molestiae hic
+              Hicestiae
             </a>
             <a href='#' className='hover:opacity-75 my-1'>
               Suscipit

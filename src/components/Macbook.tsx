@@ -1,37 +1,9 @@
 import { motion } from 'framer-motion';
 
-const svgVariants = {
-  normal: {
-    translateY: 0,
-  },
-  hover: {
-    translateY: -8,
-    transition: {
-      duration: 0.25,
-      ease: 'easeOut',
-    },
-  },
-};
-
-const macbookVariants = {
-  normal: {
-    translateY: 0,
-  },
-  hover: {
-    translateY: -12,
-    transition: {
-      duration: 0.25,
-      ease: 'easeOut',
-    },
-  },
-};
-
-export const Macbook = () => {
+export const Macbook = ({ outer, inner }: { outer: {}; inner: {} }) => {
   return (
     <motion.svg
-      initial='normal'
-      whileHover='hover'
-      variants={svgVariants}
+      variants={outer}
       width='150'
       height='225'
       viewBox='0 0 150 225'
@@ -60,7 +32,7 @@ export const Macbook = () => {
         />
       </g>
 
-      <motion.g variants={macbookVariants} id='macbook'>
+      <motion.g variants={inner} id='macbook'>
         <path
           d='M23.1969 130.692C23.1969 130.692 22.2919 131.967 24.5523 133.078C26.8127 134.188 78.5268 146.166 78.5268 146.166C79.9447 146.221 81.3587 145.983 82.6803 145.465C84.9408 144.602 129.119 133.2 129.119 133.2C129.119 133.2 130.228 132.762 130.414 132.46C130.599 132.158 130.414 130.668 130.414 130.668L23.1969 130.692Z'
           fill='#7F00FF'
@@ -130,8 +102,8 @@ export const Macbook = () => {
           y2='220.954'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#E4E4E4' />
-          <stop offset='1' stop-color='#E4E4E4' stop-opacity='0' />
+          <stop stopColor='#E4E4E4' />
+          <stop offset='1' stopColor='#E4E4E4' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id='paint1_linear_2_2'
@@ -141,8 +113,8 @@ export const Macbook = () => {
           y2='176.197'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#010101' stop-opacity='0' />
-          <stop offset='0.95' stop-color='#010101' />
+          <stop stopColor='#010101' stopOpacity='0' />
+          <stop offset='0.95' stopColor='#010101' />
         </linearGradient>
         <linearGradient
           id='paint2_linear_2_2'
@@ -152,8 +124,8 @@ export const Macbook = () => {
           y2='1858.58'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#010101' stop-opacity='0' />
-          <stop offset='0.95' stop-color='#010101' />
+          <stop stopColor='#010101' stopOpacity='0' />
+          <stop offset='0.95' stopColor='#010101' />
         </linearGradient>
         <linearGradient
           id='paint3_linear_2_2'
@@ -163,8 +135,8 @@ export const Macbook = () => {
           y2='-787.241'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#010101' stop-opacity='0' />
-          <stop offset='0.95' stop-color='#010101' />
+          <stop stopColor='#010101' stopOpacity='0' />
+          <stop offset='0.95' stopColor='#010101' />
         </linearGradient>
         <linearGradient
           id='paint4_linear_2_2'
@@ -174,8 +146,8 @@ export const Macbook = () => {
           y2='9636.02'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#010101' stop-opacity='0' />
-          <stop offset='0.95' stop-color='#010101' />
+          <stop stopColor='#010101' stopOpacity='0' />
+          <stop offset='0.95' stopColor='#010101' />
         </linearGradient>
         <linearGradient
           id='paint5_linear_2_2'
@@ -185,8 +157,8 @@ export const Macbook = () => {
           y2='120.098'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='white' stop-opacity='0' />
-          <stop offset='0.95' stop-color='white' />
+          <stop stopColor='white' stopOpacity='0' />
+          <stop offset='0.95' stopColor='white' />
         </linearGradient>
         <linearGradient
           id='paint6_linear_2_2'
@@ -196,8 +168,8 @@ export const Macbook = () => {
           y2='22090.3'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='white' stop-opacity='0' />
-          <stop offset='0.95' stop-color='white' />
+          <stop stopColor='white' stopOpacity='0' />
+          <stop offset='0.95' stopColor='white' />
         </linearGradient>
         <linearGradient
           id='paint7_linear_2_2'
@@ -207,8 +179,8 @@ export const Macbook = () => {
           y2='691.752'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#010101' stop-opacity='0' />
-          <stop offset='0.95' stop-color='#010101' />
+          <stop stopColor='#010101' stopOpacity='0' />
+          <stop offset='0.95' stopColor='#010101' />
         </linearGradient>
         <linearGradient
           id='paint8_linear_2_2'
@@ -218,8 +190,8 @@ export const Macbook = () => {
           y2='684.594'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#010101' stop-opacity='0' />
-          <stop offset='0.95' stop-color='#010101' />
+          <stop stopColor='#010101' stopOpacity='0' />
+          <stop offset='0.95' stopColor='#010101' />
         </linearGradient>
       </defs>
     </motion.svg>

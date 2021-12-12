@@ -29,43 +29,43 @@ interface TabItem {
   content: string;
 }
 
+const tabItems: TabItem[] = [
+  {
+    title: 'Provident animi ad',
+    main: Dash1,
+    icon: <MdOutlineAutoStories size={35} color='#7933bf' />,
+    content: `
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+  Temporibus dolor velit, qui molestias cum dolore est dicta alias 
+  explicabo excepturi quaerat.
+  `,
+  },
+  {
+    title: 'Ratione porro',
+    main: Dash2,
+    icon: <MdOutlineFileDownloadDone size={35} color='#7933bf' />,
+    content: `
+  Repudiandae inventore ad a ducimus. Nesciunt quidem tempore nemo hic illo
+  impedit dignissimos enim deleniti rem ea unde eligendi.
+  `,
+  },
+  {
+    title: 'Inventore sequi',
+    main: Dash3,
+    icon: <MdOutlineAddchart size={35} color='#7933bf' />,
+    content: `
+  Eveniet optio quod maxime ratione, quos possimus aliquam ea porro animi
+  omnis consectetur veniam molestiae nobis asperiores. Quae accusantium.
+  `,
+  },
+];
+
 export const TabsSection = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [tabsRef, tabsInView] = useInView({
     threshold: 0.5,
     triggerOnce: true,
   });
-
-  const tabItems: TabItem[] = [
-    {
-      title: 'Provident animi ad',
-      main: Dash1,
-      icon: <MdOutlineAutoStories size={35} color='#7933bf' />,
-      content: `
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    Temporibus dolor velit, qui molestias cum dolore est dicta alias 
-    explicabo excepturi quaerat.
-    `,
-    },
-    {
-      title: 'Ratione porro',
-      main: Dash2,
-      icon: <MdOutlineFileDownloadDone size={35} color='#7933bf' />,
-      content: `
-    Repudiandae inventore ad a ducimus. Nesciunt quidem tempore nemo hic illo
-    impedit dignissimos enim deleniti rem ea unde eligendi.
-    `,
-    },
-    {
-      title: 'Inventore sequi',
-      main: Dash3,
-      icon: <MdOutlineAddchart size={35} color='#7933bf' />,
-      content: `
-    Eveniet optio quod maxime ratione, quos possimus aliquam ea porro animi
-    omnis consectetur veniam molestiae nobis asperiores. Quae accusantium.
-    `,
-    },
-  ];
 
   const handleTabClick = (i: number) => setTabIndex(i);
 
@@ -159,7 +159,7 @@ const renderTabImages = (i: number) => {
       {i === 0 && (
         <motion.div
           variants={dashVariants}
-          className='absolute top-36 right-20 border-t shadow-2xl'
+          className='absolute top-36 right-20 shadow-2xl'
         >
           <img style={{ objectFit: 'cover' }} src={Dash1} alt='dashboard' />
 
@@ -207,7 +207,7 @@ const renderTabImages = (i: number) => {
       {i === 1 && (
         <motion.div
           variants={dashVariants}
-          className='absolute top-36 right-20 border-t shadow-2xl'
+          className='absolute top-36 right-20 shadow-2xl'
         >
           <img style={{ objectFit: 'cover' }} src={Dash2} alt='dashboard' />
 
@@ -254,7 +254,7 @@ const renderTabImages = (i: number) => {
       {i === 2 && (
         <motion.div
           variants={dashVariants}
-          className='absolute top-36 right-20 border-t shadow-2xl'
+          className='absolute top-36 right-20 shadow-2xl'
         >
           <img style={{ objectFit: 'cover' }} src={Dash3} alt='dashboard' />
 

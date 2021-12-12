@@ -1,37 +1,9 @@
 import { motion } from 'framer-motion';
 
-const svgVariants = {
-  normal: {
-    translateY: 0,
-  },
-  hover: {
-    translateY: -8,
-    transition: {
-      duration: 0.25,
-      ease: 'easeOut',
-    },
-  },
-};
-
-const cardsVariants = {
-  normal: {
-    translateY: 0,
-  },
-  hover: {
-    translateY: -12,
-    transition: {
-      duration: 0.25,
-      ease: 'easeOut',
-    },
-  },
-};
-
-export const Cards = () => {
+export const Cards = ({ outer, inner }: { outer: {}; inner: {} }) => {
   return (
     <motion.svg
-      initial='normal'
-      whileHover='hover'
-      variants={svgVariants}
+      variants={outer}
       width='150'
       height='225'
       viewBox='0 0 150 225'
@@ -60,7 +32,7 @@ export const Cards = () => {
         />
       </g>
 
-      <motion.g variants={cardsVariants} id='cards'>
+      <motion.g variants={inner} id='cards'>
         <path
           d='M42.9312 33.3411L79.4012 51.7635C81.5377 52.8419 83.3814 55.6764 83.512 58.0935L87.3476 126.325C87.4838 128.741 85.8597 129.823 83.7233 128.744L47.2638 110.315C45.1259 109.235 43.2836 106.402 43.153 103.985L39.3174 35.7539C39.1706 33.3443 40.7933 32.2605 42.9312 33.3411Z'
           fill='#7F00FF'
@@ -177,8 +149,8 @@ export const Cards = () => {
           y2='220.954'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#E4E4E4' />
-          <stop offset='1' stop-color='#E4E4E4' stop-opacity='0' />
+          <stop stopColor='#E4E4E4' />
+          <stop offset='1' stopColor='#E4E4E4' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id='paint1_linear_2_3'
@@ -189,8 +161,8 @@ export const Cards = () => {
           gradientUnits='userSpaceOnUse'
         >
           <stop offset='0.01' />
-          <stop offset='0.13' stop-opacity='0.69' />
-          <stop offset='1' stop-opacity='0' />
+          <stop offset='0.13' stopOpacity='0.69' />
+          <stop offset='1' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id='paint2_linear_2_3'
@@ -201,8 +173,8 @@ export const Cards = () => {
           gradientUnits='userSpaceOnUse'
         >
           <stop offset='0.01' />
-          <stop offset='0.13' stop-opacity='0.69' />
-          <stop offset='1' stop-opacity='0' />
+          <stop offset='0.13' stopOpacity='0.69' />
+          <stop offset='1' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id='paint3_linear_2_3'
@@ -213,8 +185,8 @@ export const Cards = () => {
           gradientUnits='userSpaceOnUse'
         >
           <stop offset='0.01' />
-          <stop offset='0.13' stop-opacity='0.69' />
-          <stop offset='1' stop-opacity='0' />
+          <stop offset='0.13' stopOpacity='0.69' />
+          <stop offset='1' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id='paint4_linear_2_3'
@@ -225,8 +197,8 @@ export const Cards = () => {
           gradientUnits='userSpaceOnUse'
         >
           <stop offset='0.01' />
-          <stop offset='0.13' stop-opacity='0.69' />
-          <stop offset='1' stop-opacity='0' />
+          <stop offset='0.13' stopOpacity='0.69' />
+          <stop offset='1' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id='paint5_linear_2_3'
@@ -237,8 +209,8 @@ export const Cards = () => {
           gradientUnits='userSpaceOnUse'
         >
           <stop offset='0.01' />
-          <stop offset='0.13' stop-opacity='0.69' />
-          <stop offset='1' stop-opacity='0' />
+          <stop offset='0.13' stopOpacity='0.69' />
+          <stop offset='1' stopOpacity='0' />
         </linearGradient>
       </defs>
     </motion.svg>

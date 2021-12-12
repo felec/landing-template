@@ -11,6 +11,7 @@ import {
   MdKeyboardArrowDown,
   MdPeopleAlt,
   MdOutlineImportContacts,
+  MdMenu,
 } from 'react-icons/md';
 
 interface NavItem {
@@ -20,22 +21,26 @@ interface NavItem {
   title: string;
 }
 
+const navItems = [
+  { width: 440, height: 240, x: -140, title: 'Products' },
+  { width: 340, height: 240, x: -5, title: 'Features' },
+  { width: 200, height: 240, x: 100, title: 'About' },
+  { width: 300, height: 240, x: 220, title: 'My Account' },
+];
+
 export const HeaderNav = ({ inView }: { inView: boolean }) => {
   const [navIndex, setNavIndex] = useState(-1);
-
-  const navItems = [
-    { width: 440, height: 240, x: -140, title: 'Products' },
-    { width: 340, height: 240, x: 5, title: 'Features' },
-    { width: 200, height: 240, x: 130, title: 'About' },
-    { width: 370, height: 240, x: 255, title: 'My Account' },
-  ];
 
   const handleNavLeave = () => setNavIndex(-1);
 
   return (
-    <div onMouseLeave={handleNavLeave} className='relative w-2/5'>
+    <div onMouseLeave={handleNavLeave} className='relative'>
       <nav>
-        <ul className={`flex justify-evenly items-center text-md`}>
+        <div className=' lg:hidden'>
+          <MdMenu size={30} />
+        </div>
+
+        <ul className={`hidden lg:flex justify-evenly items-center text-md`}>
           {navItems.map((n, i) => {
             return (
               <li
@@ -151,7 +156,7 @@ const renderNavContent = (info: NavItem) => {
             width: info.width,
             position: 'absolute',
             top: '.25rem',
-            left: '1.5rem',
+            left: '1rem',
           }}
           className='px-12 py-4 flex flex-col justify-evenly'
         >
@@ -201,7 +206,7 @@ const renderNavContent = (info: NavItem) => {
             width: info.width,
             position: 'absolute',
             top: '.25rem',
-            left: '14rem',
+            left: '12rem',
           }}
           className='text-sm px-4 flex flex-col justify-evenly'
         >
@@ -261,7 +266,7 @@ const renderNavContent = (info: NavItem) => {
             Log In
           </button>
           <button className='w-5/6 bg-purple-600 font-bold text-white hover:bg-purple-700 border-purple-800 rounded-md py-3'>
-            Contact Sales
+            Contact Support
           </button>
         </motion.div>
       )}

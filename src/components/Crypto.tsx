@@ -1,37 +1,9 @@
 import { motion } from 'framer-motion';
 
-const svgVariants = {
-  normal: {
-    translateY: 0,
-  },
-  hover: {
-    translateY: -8,
-    transition: {
-      duration: 0.25,
-      ease: 'easeOut',
-    },
-  },
-};
-
-const diamondVariants = {
-  normal: {
-    translateY: 0,
-  },
-  hover: {
-    translateY: -12,
-    transition: {
-      duration: 0.25,
-      ease: 'easeOut',
-    },
-  },
-};
-
-export const Crypto = () => {
+export const Crypto = ({ outer, inner }: { outer: {}; inner: {} }) => {
   return (
     <motion.svg
-      initial='normal'
-      whileHover='hover'
-      variants={svgVariants}
+      variants={outer}
       width='150'
       height='225'
       viewBox='0 0 150 225'
@@ -60,7 +32,7 @@ export const Crypto = () => {
         />
       </g>
 
-      <motion.g variants={diamondVariants} id='diamond'>
+      <motion.g variants={inner} id='diamond'>
         <path
           d='M111.011 93.1294L74.5054 119.099L38 93.1294L74.5054 74.8845L111.011 93.1294Z'
           fill='#4B088E'
@@ -101,8 +73,8 @@ export const Crypto = () => {
           y2='240.954'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#E4E4E4' />
-          <stop offset='1' stop-color='#E4E4E4' stop-opacity='0' />
+          <stop stopColor='#E4E4E4' />
+          <stop offset='1' stopColor='#E4E4E4' stopOpacity='0' />
         </linearGradient>
       </defs>
     </motion.svg>

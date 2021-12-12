@@ -20,8 +20,8 @@ const cardVariants = {
   hover: {
     translateY: -10,
     transition: {
-      ease: 'linear',
-      duration: 0.2,
+      duration: 0.25,
+      ease: 'easeOut',
     },
   },
 };
@@ -31,7 +31,7 @@ const imgVariants = {
     opacity: 0,
     translateY: 20,
   },
-  animate: (i: number) => ({
+  show: (i: number) => ({
     opacity: 1,
     translateY: 0,
     transition: {
@@ -42,44 +42,70 @@ const imgVariants = {
   }),
 };
 
-export const CardList = () => {
-  const cards = [
-    {
-      image: <Crypto />,
-      price: 5.0,
-      title: 'Consectetur',
-      subTitle: `
-      Lorem ipsum dolor sit, amet elit. 
-      Recusandae, sequi voluptate reprehenderit.`,
+const outer = {
+  normal: {
+    translateY: 0,
+  },
+  hover: {
+    translateY: -8,
+    transition: {
+      duration: 0.25,
+      ease: 'easeOut',
     },
-    {
-      image: <Cards />,
-      price: 25.0,
-      title: 'Elit Pariatur',
-      subTitle: `
-      Ipsa sequi voluptas rem consequatur voluptatem iusto.
-      `,
-    },
-    {
-      image: <Macbook />,
-      price: 75.0,
-      title: 'Adipisicing',
-      subTitle: `
-      Beatae commodi quam. Itaque, 
-      velit eius minima nobis excepturi modi.
-      `,
-    },
-    {
-      image: <Shield />,
-      price: 100.0,
-      title: 'Lorem Ipsum',
-      subTitle: `
-      In culpa praesentium ex error. 
-      Explicabo, illo molestias porro ullam! Maiores, labore.
-      `,
-    },
-  ];
+  },
+};
 
+const inner = {
+  normal: {
+    translateY: 0,
+  },
+  hover: {
+    translateY: -12,
+    transition: {
+      duration: 0.25,
+      ease: 'easeOut',
+    },
+  },
+};
+
+const cards = [
+  {
+    image: <Crypto outer={outer} inner={inner} />,
+    price: 5.0,
+    title: 'Consectetur',
+    subTitle: `
+    Lorem ipsum dolor sit, amet elit. 
+    Recusandae, sequi voluptate reprehenderit.`,
+  },
+  {
+    image: <Cards outer={outer} inner={inner} />,
+    price: 25.0,
+    title: 'Elit Pariatur',
+    subTitle: `
+    Ipsa sequi voluptas rem consequatur voluptatem iusto.
+    `,
+  },
+  {
+    image: <Macbook outer={outer} inner={inner} />,
+    price: 75.0,
+    title: 'Adipisicing',
+    subTitle: `
+    Beatae commodi quam. Itaque, 
+    velit eius minima nobis excepturi modi.
+    `,
+  },
+  {
+    image: <Shield outer={outer} inner={inner} />,
+    price: 100.0,
+    title: 'Lorem Ipsum',
+    subTitle: `
+    In culpa praesentium ex error. 
+    Explicabo, illo molestias porro ullam! Maiores, labore.
+    `,
+  },
+];
+
+export const CardList = () => {
   return (
     <section className='flex justify-evenly my-20 px-12'>
       {cards.map((c, i) => (
@@ -97,17 +123,13 @@ const Card = ({ content, idx }: { content: Content; idx: number }) => {
       ref={ref}
       variants={cardVariants}
       initial='normal'
+      animate='show'
       whileHover='hover'
       style={{ height: '28rem', width: '18rem' }}
       className='flex flex-col items-center justify-end p-4 rounded-md shadow-md hover:shadow-2xl bg-white cursor-pointer'
     >
       {inView ? (
-        <motion.div
-          initial='normal'
-          animate='animate'
-          variants={imgVariants}
-          custom={idx}
-        >
+        <motion.div variants={imgVariants} custom={idx}>
           {content.image}
         </motion.div>
       ) : (

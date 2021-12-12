@@ -1,37 +1,9 @@
 import { motion } from 'framer-motion';
 
-const svgVariants = {
-  normal: {
-    translateY: 0,
-  },
-  hover: {
-    translateY: -8,
-    transition: {
-      duration: 0.25,
-      ease: 'easeOut',
-    },
-  },
-};
-
-const shieldVariants = {
-  normal: {
-    translateY: 0,
-  },
-  hover: {
-    translateY: -12,
-    transition: {
-      duration: 0.25,
-      ease: 'easeOut',
-    },
-  },
-};
-
-export const Shield = () => {
+export const Shield = ({ outer, inner }: { outer: {}; inner: {} }) => {
   return (
     <motion.svg
-      initial='normal'
-      whileHover='hover'
-      variants={svgVariants}
+      variants={outer}
       width='150'
       height='225'
       viewBox='0 0 150 225'
@@ -60,7 +32,7 @@ export const Shield = () => {
         />
       </g>
 
-      <motion.g variants={shieldVariants} id='shield'>
+      <motion.g variants={inner} id='shield'>
         <path
           d='M110.112 82.6454C107.517 131.053 74.9611 143.705 74.9611 143.705C38.8185 122.277 39 80.4303 39 80.4303C62.0345 74.2425 75.2091 61.5839 75.6204 61.1685C84.2099 73.6225 110.112 82.6454 110.112 82.6454Z'
           fill='#7F00FF'
@@ -89,36 +61,36 @@ export const Shield = () => {
           opacity='0.18'
           d='M44.7586 95.2137H51.9871V89.995H57.7155'
           stroke='white'
-          stroke-width='1.22794'
-          stroke-miterlimit='10'
+          strokeWidth='1.22794'
+          strokeMiterlimit='10'
         />
         <path
           opacity='0.18'
           d='M46.1741 100.806H55.5863V112.194H61.4779'
           stroke='white'
-          stroke-width='1.22794'
-          stroke-miterlimit='10'
+          strokeWidth='1.22794'
+          strokeMiterlimit='10'
         />
         <path
           opacity='0.18'
           d='M105.309 91.6684H93.3922V84.9448H82.7521'
           stroke='white'
-          stroke-width='1.22794'
-          stroke-miterlimit='10'
+          strokeWidth='1.22794'
+          strokeMiterlimit='10'
         />
         <path
           opacity='0.18'
           d='M103.089 102.852H91.4808V114.692H83.2965'
           stroke='white'
-          stroke-width='1.22794'
-          stroke-miterlimit='10'
+          strokeWidth='1.22794'
+          strokeMiterlimit='10'
         />
         <path
           opacity='0.18'
           d='M57.7155 123.691H67.4543V119.14H73.346'
           stroke='white'
-          stroke-width='1.22794'
-          stroke-miterlimit='10'
+          strokeWidth='1.22794'
+          strokeMiterlimit='10'
         />
       </motion.g>
 
@@ -131,8 +103,8 @@ export const Shield = () => {
           y2='219.954'
           gradientUnits='userSpaceOnUse'
         >
-          <stop stop-color='#E4E4E4' />
-          <stop offset='1' stop-color='#E4E4E4' stop-opacity='0' />
+          <stop stopColor='#E4E4E4' />
+          <stop offset='1' stopColor='#E4E4E4' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id='paint1_linear_3_2'
@@ -143,7 +115,7 @@ export const Shield = () => {
           gradientUnits='userSpaceOnUse'
         >
           <stop />
-          <stop offset='1' stop-opacity='0' />
+          <stop offset='1' stopOpacity='0' />
         </linearGradient>
         <linearGradient
           id='paint2_linear_3_2'
@@ -154,7 +126,7 @@ export const Shield = () => {
           gradientUnits='userSpaceOnUse'
         >
           <stop />
-          <stop offset='1' stop-opacity='0' />
+          <stop offset='1' stopOpacity='0' />
         </linearGradient>
       </defs>
     </motion.svg>
