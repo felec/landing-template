@@ -1,6 +1,6 @@
 import { Circles } from '../../components/Circles';
-import { Gears } from '../../components/Gears';
 import { Cubes } from '../../components/Cubes';
+import { Gears } from '../../components/Gears';
 import { Triangles } from '../../components/Triangles';
 
 interface InfoItem {
@@ -48,17 +48,17 @@ const infoItems: InfoItem[] = [
 
 export const InfoSection = () => {
   return (
-    <section className='flex flex-col px-24 mt-20 mb-40'>
+    <section className='flex flex-col px-8 lg:px-24 lg:mt-20 lg:mb-40'>
       <h2 className='text-base font-semibold text-purple-600'>Why Company</h2>
       <h3 className='text-3xl font-bold mt-4'>
         Vero minus nemo harum sunt itaque delectus
       </h3>
 
-      <div className='flex h-5/6'>
+      <div className='flex flex-col lg:flex-row h-5/6'>
         {infoItems.map((i) => {
           return (
             <div key={i.title} className='flex flex-col text-sm mr-8'>
-              <div className='my-8'>{i.icon}</div>
+              <div className='my-4 lg:my-8'>{i.icon}</div>
               <div className='flex'>
                 <h4 className='font-semibold mb-2'>{i.title}</h4>
               </div>

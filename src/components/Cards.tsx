@@ -139,7 +139,6 @@ export const Cards = ({ outer, inner }: { outer: {}; inner: {} }) => {
           fill='#7F00FF'
         />
       </motion.g>
-
       <defs>
         <linearGradient
           id='paint0_linear_2_3'

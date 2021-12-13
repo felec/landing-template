@@ -13,9 +13,9 @@ export const Footer = () => {
         background:
           'linear-gradient(90deg, rgba(77,10,144,1) 0%, rgba(121,51,190,1) 70%, rgba(139,68,209,1) 100%)',
       }}
-      className='flex flex-col w-full p-16 mt-20 text-white'
+      className='flex flex-col w-full p-4 lg:p-16 mt-20 text-white'
     >
-      <div className='flex justify-evenly h-44'>
+      <div className='grid grid-cols-2 justify-items-center gap-4 lg:gap-0 lg:flex justify-evenly lg:h-44'>
         <div className='h-full flex flex-col justify-evenly text-sm'>
           <h3 className='font-semibold mb-2'>Praesentium</h3>
           <div className='h-full flex flex-col'>
@@ -92,8 +92,8 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className='self-end flex justify-between w-full mt-16'>
-        <div className='flex justify-evenly w-1/5'>
+      <div className='lg:self-end flex flex-col lg:flex-row items-center lg:items-start lg:justify-between w-full mt-16'>
+        <div className='flex justify-evenly w-full md:w-2/5 lg:w-1/5'>
           <a href='#' className='opacity-60 hover:opacity-100'>
             <AiOutlineLinkedin size={25} />
           </a>
@@ -111,17 +111,17 @@ export const Footer = () => {
           </a>
         </div>
 
-        <div className='flex w-1/2 justify-evenly text-sm'>
-          <a href='#' className='opacity-60 hover:opacity-100'>
+        <div className='grid grid-cols-2 justify-items-center lg:flex w-full lg:w-1/2 my-4 lg:my-0 justify-evenly text-xs lg:text-sm'>
+          <a href='#' className='my-2 lg:my-0 opacity-60 hover:opacity-100'>
             Terms of Service
           </a>
-          <a href='#' className='opacity-60 hover:opacity-100'>
+          <a href='#' className='my-2 lg:my-0 opacity-60 hover:opacity-100'>
             AUP/DMCA
           </a>
-          <a href='#' className='opacity-60 hover:opacity-100'>
+          <a href='#' className='my-2 lg:my-0 opacity-60 hover:opacity-100'>
             Privacy Policy
           </a>
-          <a href='#' className='opacity-60 hover:opacity-100'>
+          <a href='#' className='my-2 lg:my-0 opacity-60 hover:opacity-100'>
             Cookie Policy
           </a>
         </div>

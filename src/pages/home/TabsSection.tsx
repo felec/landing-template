@@ -72,23 +72,22 @@ export const TabsSection = () => {
   return (
     <section
       ref={tabsRef}
-      style={{ height: '110vh' }}
-      className='relative flex flex-col my-20 overflow-hidden'
+      className='relative flex flex-col my-20 h-full pb-8 lg:pb-40 overflow-hidden'
     >
       <div
         style={{ height: '30rem', width: '30rem' }}
-        className='absolute top-36 -right-72 transform rotate-45 bg-purple-700 rounded-md'
+        className='hidden lg:block absolute top-44 -right-72 transform rotate-45 bg-purple-700 rounded-md'
       ></div>
 
-      <div className='flex flex-col items-center self-center'>
-        <h2 className='flex text-4xl font-bold'>Quasi adipisci</h2>
-        <p className='text-2xl font-thin text-gray-500 mt-8 mb-16'>
-          Neque eveniet minus cum nobis nisi.
+      <div className='flex flex-col items-center self-center text-center lg:text-left px-4 mb-4 lg:mb-16 lg:px-0'>
+        <h2 className='text-3xl lg:text-4xl font-bold'>Quasi adipisci</h2>
+        <p className='text-lg lg:text-2xl font-thin text-gray-500 mt-8'>
+          Neque eveniet minus cum nobis lorem nisi.
         </p>
       </div>
 
-      <div className='mx-24'>
-        <div className='flex flex-col my-4'>
+      <div className='mx-4 lg:mx-24'>
+        <div className='flex flex-col items-center lg:items-start my-4'>
           {tabItems.map((t, i) => {
             return (
               <motion.div
@@ -116,9 +115,70 @@ export const TabsSection = () => {
             );
           })}
         </div>
-        {tabsInView && renderTabImages(tabIndex)}
+
+        <div className='lg:hidden'>{renderMobileImages(tabIndex)}</div>
+
+        <div className='hidden lg:block'>
+          {tabsInView && renderTabImages(tabIndex)}
+        </div>
       </div>
     </section>
+  );
+};
+
+const mobileVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  selected: {
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: 'easeOut',
+    },
+  },
+};
+
+const renderMobileImages = (i: number) => {
+  return (
+    <div className='h-full w-full flex justify-center'>
+      {i === 0 && (
+        <motion.img
+          initial='hidden'
+          animate='selected'
+          variants={mobileVariants}
+          src={Dash1}
+          height='85%'
+          width='85%'
+          alt='dashboard'
+          className='shadow-lg'
+        />
+      )}
+      {i === 1 && (
+        <motion.img
+          initial='hidden'
+          animate='selected'
+          variants={mobileVariants}
+          src={Dash2}
+          height='85%'
+          width='85%'
+          alt='dashboard'
+          className='shadow-lg'
+        />
+      )}
+      {i === 2 && (
+        <motion.img
+          initial='hidden'
+          animate='selected'
+          variants={mobileVariants}
+          src={Dash3}
+          height='85%'
+          width='85%'
+          alt='dashboard'
+          className='shadow-lg'
+        />
+      )}
+    </div>
   );
 };
 
@@ -159,9 +219,9 @@ const renderTabImages = (i: number) => {
       {i === 0 && (
         <motion.div
           variants={dashVariants}
-          className='absolute top-36 right-20 shadow-2xl'
+          className='absolute top-44 right-20 shadow-2xl'
         >
-          <img style={{ objectFit: 'cover' }} src={Dash1} alt='dashboard' />
+          <img src={Dash1} alt='dashboard' className='object-cover' />
 
           <motion.div
             variants={panelVariants}
@@ -207,9 +267,9 @@ const renderTabImages = (i: number) => {
       {i === 1 && (
         <motion.div
           variants={dashVariants}
-          className='absolute top-36 right-20 shadow-2xl'
+          className='absolute top-44 right-20 shadow-2xl'
         >
-          <img style={{ objectFit: 'cover' }} src={Dash2} alt='dashboard' />
+          <img src={Dash2} alt='dashboard' className='object-cover' />
 
           <motion.div
             variants={panelVariants}
@@ -254,9 +314,9 @@ const renderTabImages = (i: number) => {
       {i === 2 && (
         <motion.div
           variants={dashVariants}
-          className='absolute top-36 right-20 shadow-2xl'
+          className='absolute top-44 right-20 shadow-2xl'
         >
-          <img style={{ objectFit: 'cover' }} src={Dash3} alt='dashboard' />
+          <img src={Dash3} alt='dashboard' className='object-cover' />
 
           <motion.div
             variants={panelVariants}

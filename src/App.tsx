@@ -6,27 +6,33 @@ import { MapSection } from './pages/home/MapSection';
 import { HeadSection } from './pages/home/HeadSection';
 import { InfoSection } from './pages/home/InfoSection';
 import { TabsSection } from './pages/home/TabsSection';
-import Background from './assets/svgs/header_bg.svg';
 
 function App() {
   return (
     <div
-      style={{
-        // backgroundImage: `url(${Background})`,
-        // backgroundRepeat: 'no-repeat',
-        // backgroundSize: 'contain',
-        fontFamily: 'Open Sans, sans-serif',
-      }}
+      style={{ fontFamily: 'Open Sans, sans-serif' }}
       className='relative flex flex-col h-full w-full'
     >
-      <div className='absolute flex items-end top-0 left-0 h-1/6 lg:h-1/5 w-full bg-purple-500'>
+      <div
+        style={{
+          zIndex: -1,
+          background:
+            'linear-gradient(90deg, rgba(77,10,144,1) 0%, rgba(121,51,190,1) 70%, rgba(139,68,209,1) 100%)',
+        }}
+        className='absolute top-0 left-0 h-1/6 lg:h-1/5 w-full'
+      >
         <svg
-          fill='#fff'
+          className='absolute -bottom-1 left-0'
+          viewBox='0 0 1249 192'
+          fill='none'
           xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 1200 120'
-          preserveAspectRatio='none'
         >
-          <path d='M1200 0L0 0 598.97 114.72 1200 0z'></path>
+          <g clipPath='url(#clip0_2_2)'>
+            <path
+              d='M618.008 177.743C621.615 178.78 625.44 178.781 629.048 177.747L1249 0V192H0V0L618.008 177.743Z'
+              fill='#fff'
+            />
+          </g>
         </svg>
       </div>
 
