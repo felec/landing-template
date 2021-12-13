@@ -31,7 +31,7 @@ export const SignUpForm = () => {
 
       <button
         onClick={(e) => handleForm(e)}
-        className='bg-purple-800 hover:bg-purple-700 rounded-md text-white font-bold px-8 py-4'
+        className='h-14 bg-purple-800 hover:bg-purple-700 rounded-md text-white font-bold px-8'
       >
         Create Account
       </button>

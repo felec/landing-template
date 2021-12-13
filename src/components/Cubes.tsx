@@ -11,7 +11,7 @@ const dark1Variants = {
     transition: {
       duration: 0.75,
       ease: 'easeOut',
-      delay: 5.5,
+      delay: 4.5,
       repeat: Infinity,
       repeatDelay: 7,
     },
@@ -30,7 +30,7 @@ const dark2Variants = {
     transition: {
       duration: 0.75,
       ease: 'easeOut',
-      delay: 5.5,
+      delay: 4.5,
       repeat: Infinity,
       repeatDelay: 7,
     },
@@ -48,7 +48,7 @@ const light1Variants = {
       type: 'tween',
       duration: 0.75,
       ease: 'easeOut',
-      delay: 5.5,
+      delay: 4.5,
       repeat: Infinity,
       repeatDelay: 7,
     },
