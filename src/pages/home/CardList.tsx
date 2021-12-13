@@ -116,61 +116,32 @@ export const CardList = () => {
         className='md:hidden lg:hidden overflow-hidden py-16'
       >
         <div className='flex'>
-          {cards.map((c) => (
+          {cards.map((c, i) => (
             <div key={c.title} className='relative flex-1 mx-2'>
-              <Card content={c} />
+              <Card content={c} idx={i} />
             </div>
           ))}
         </div>
       </section>
 
       <section className='hidden md:grid lg:hidden grid-cols-2 justify-items-center my-20'>
-        {cards.map((c) => (
+        {cards.map((c, i) => (
           <div key={c.title} className='m-2'>
-            <Card content={c} />
+            <Card content={c} idx={i} />
           </div>
         ))}
       </section>
 
       <section className='hidden lg:flex justify-evenly my-20 px-12'>
         {cards.map((c, i) => (
-          <AnimCard key={c.title} content={c} idx={i} />
+          <Card key={c.title} content={c} idx={i} />
         ))}
       </section>
     </>
   );
 };
 
-const Card = ({ content }: { content: Content }) => {
-  return (
-    <div
-      style={{ height: '28rem', width: '18rem' }}
-      className='flex flex-col items-center justify-end p-4 rounded-md shadow-md border bg-white cursor-pointer'
-    >
-      {content.image}
-
-      <div className='flex flex-col justify-evenly h-1/2 text-center'>
-        <h3 className='text-xl font-bold'>{content.title}</h3>
-
-        <p
-          style={{ fontSize: '1rem' }}
-          className=' text-gray-500 tracking-wide'
-        >
-          {content.subTitle}
-        </p>
-
-        <span
-          style={{ fontSize: '1rem' }}
-          className='text-lg font-semibold text-purple-600 tracking-wide'
-        >
-          Starting at ${content.price}/month
-        </span>
-      </div>
-    </div>
-  );
-};
-
-const AnimCard = ({ content, idx }: { content: Content; idx: number }) => {
+const Card = ({ content, idx }: { content: Content; idx: number }) => {
   const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true });
 
   return (
@@ -181,7 +152,7 @@ const AnimCard = ({ content, idx }: { content: Content; idx: number }) => {
       animate='show'
       whileHover='hover'
       style={{ height: '28rem', width: '18rem' }}
-      className='flex flex-col items-center justify-end p-4 rounded-md shadow-md hover:shadow-2xl bg-white cursor-pointer'
+      className='flex flex-col items-center justify-end p-4 rounded-md shadow-md hover:shadow-2xl border lg:border-0 bg-white cursor-pointer'
     >
       {inView ? (
         <motion.div variants={imgVariants} custom={idx}>
