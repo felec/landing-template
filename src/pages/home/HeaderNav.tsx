@@ -23,9 +23,9 @@ interface NavItem {
 
 const navItems = [
   { width: 440, height: 240, x: -140, title: 'Products' },
-  { width: 340, height: 240, x: -5, title: 'Features' },
+  { width: 340, height: 240, x: -25, title: 'Features' },
   { width: 200, height: 240, x: 100, title: 'About' },
-  { width: 300, height: 240, x: 220, title: 'My Account' },
+  { width: 300, height: 240, x: 195, title: 'My Account' },
 ];
 
 export const HeaderNav = ({ inView }: { inView: boolean }) => {
@@ -156,7 +156,7 @@ const renderNavContent = (info: NavItem) => {
             width: info.width,
             position: 'absolute',
             top: '.25rem',
-            left: '1rem',
+            left: '0',
           }}
           className='px-12 py-4 flex flex-col justify-evenly'
         >
@@ -256,7 +256,7 @@ const renderNavContent = (info: NavItem) => {
             width: info.width,
             position: 'absolute',
             top: '.25rem',
-            left: '16.5rem',
+            left: '15rem',
           }}
           className='text-sm px-4 flex flex-col justify-evenly items-center'
         >
