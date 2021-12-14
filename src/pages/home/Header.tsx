@@ -32,6 +32,27 @@ export const Header = () => {
 
   return (
     <header ref={headRef} className='z-40'>
+      {/* Mobile */}
+      <div
+        style={{
+          backgroundColor: headInView ? 'transparent' : '#fff',
+          boxShadow: headInView
+            ? ''
+            : '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        }}
+        className='flex lg:hidden fixed w-full px-8 lg:px-16 justify-between items-center'
+      >
+        <div className='block lg:hidden'></div>
+
+        <div className='flex items-center ml-6 lg:ml-0 my-2 font-light font-mono cursor-pointer'>
+          <Logo />
+          <h2 className='hidden lg:block lg:text-3xl ml-2'>Company</h2>
+        </div>
+
+        <HeaderNav inView={headInView} />
+      </div>
+
+      {/* Lg */}
       <motion.div
         animate={anim}
         style={{
@@ -40,7 +61,7 @@ export const Header = () => {
             ? ''
             : '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
         }}
-        className='fixed w-full px-8 lg:px-16 flex justify-between items-center'
+        className='hidden lg:flex fixed w-full px-8 lg:px-16 justify-between items-center'
       >
         <div className='block lg:hidden'></div>
 

@@ -20,7 +20,7 @@ const langVariants = {
 
 export const Banner = () => {
   return (
-    <div className='flex justify-center lg:justify-between lg:px-16 py-2 bg-gray-200 z-50'>
+    <div className='hidden lg:flex justify-center lg:justify-between lg:px-16 py-2 bg-gray-200 z-50'>
       <div></div>
 
       <a href='#' className='flex text-sm'>

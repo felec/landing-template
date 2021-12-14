@@ -53,7 +53,7 @@ export const HeaderNav = ({ inView }: { inView: boolean }) => {
             width: '100vw',
             backgroundColor: '#fff',
           }}
-          className='lg:hidden fixed top-2 right-0 overflow-y-scroll overflow-x-hidden lg:overflow-auto'
+          className='lg:hidden fixed top-0 right-0 overflow-y-scroll overflow-x-hidden lg:overflow-auto'
         >
           {renderNavContent(navItems[0], true)}
         </motion.div>
