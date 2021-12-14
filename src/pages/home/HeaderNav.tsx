@@ -38,6 +38,7 @@ export const HeaderNav = ({ inView }: { inView: boolean }) => {
   return (
     <div onMouseLeave={handleNavLeave} className='relative'>
       <nav>
+        {/* Mobile Backdrop*/}
         <motion.div
           initial={false}
           animate={{
@@ -58,6 +59,7 @@ export const HeaderNav = ({ inView }: { inView: boolean }) => {
           {renderNavContent(navItems[0], true)}
         </motion.div>
 
+        {/* Mobile Menu */}
         <motion.div
           initial={false}
           animate={{
@@ -116,6 +118,7 @@ export const HeaderNav = ({ inView }: { inView: boolean }) => {
           ></motion.div>
         </motion.div>
 
+        {/* Lg nav menu */}
         <ul className={`hidden lg:flex justify-evenly items-center text-md`}>
           {navItems.map((n, i) => {
             return (
