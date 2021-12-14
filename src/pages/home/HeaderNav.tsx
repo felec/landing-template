@@ -53,7 +53,7 @@ export const HeaderNav = ({ inView }: { inView: boolean }) => {
             width: '100vw',
             backgroundColor: '#fff',
           }}
-          className='lg:hidden fixed top-0 right-0 overflow-y-scroll overflow-x-hidden lg:overflow-auto'
+          className='lg:hidden fixed top-2 right-0 overflow-y-scroll overflow-x-hidden lg:overflow-auto'
         >
           {renderNavContent(navItems[0], true)}
         </motion.div>
@@ -61,7 +61,7 @@ export const HeaderNav = ({ inView }: { inView: boolean }) => {
         <motion.div
           initial={false}
           animate={{
-            translateY: isOpen ? -50 : 0,
+            translateY: isOpen ? -20 : 0,
             translateX: isOpen ? 20 : 0,
             transition: {
               type: 'tween',
