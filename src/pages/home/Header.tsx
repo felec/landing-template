@@ -25,6 +25,8 @@ export const Header = () => {
         },
       });
     }
+
+    return () => anim.stop();
     // eslint-disable-next-line
   }, [headInView]);
 

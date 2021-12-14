@@ -152,7 +152,7 @@ const Card = ({ content, idx }: { content: Content; idx: number }) => {
       animate='show'
       whileHover='hover'
       style={{ height: '28rem', width: '18rem' }}
-      className='flex flex-col items-center justify-end p-4 rounded-md shadow-md hover:shadow-2xl border lg:border-0 bg-white cursor-pointer'
+      className='flex flex-col items-center justify-end p-4 lg:mx-1 rounded-md shadow-md hover:shadow-2xl border lg:border-0 bg-white cursor-pointer'
     >
       {inView ? (
         <motion.div variants={imgVariants} custom={idx}>

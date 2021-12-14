@@ -11,7 +11,6 @@ import {
   MdKeyboardArrowDown,
   MdPeopleAlt,
   MdOutlineImportContacts,
-  MdMenu,
 } from 'react-icons/md';
 
 interface NavItem {
@@ -30,15 +29,92 @@ const navItems = [
 
 export const HeaderNav = ({ inView }: { inView: boolean }) => {
   const [navIndex, setNavIndex] = useState(-1);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleNavLeave = () => setNavIndex(-1);
+
+  const handleMenuClick = () => setIsOpen(!isOpen);
 
   return (
     <div onMouseLeave={handleNavLeave} className='relative'>
       <nav>
-        <div className=' lg:hidden'>
-          <MdMenu size={30} />
-        </div>
+        <motion.div
+          initial={false}
+          animate={{
+            opacity: isOpen ? 1 : 0,
+            translateX: isOpen ? '0%' : '105%',
+            transition: {
+              duration: 0.3,
+              ease: 'easeOut',
+            },
+          }}
+          style={{
+            height: '100vh',
+            width: '100vw',
+            backgroundColor: '#fff',
+          }}
+          className='lg:hidden fixed top-0 right-0 overflow-y-scroll overflow-x-hidden lg:overflow-auto'
+        >
+          {renderNavContent(navItems[0], true)}
+        </motion.div>
+
+        <motion.div
+          initial={false}
+          animate={{
+            translateY: isOpen ? -50 : 0,
+            translateX: isOpen ? 20 : 0,
+            transition: {
+              type: 'tween',
+            },
+          }}
+          onClick={handleMenuClick}
+          className='lg:hidden flex flex-col justify-evenly h-8 cursor-pointer'
+        >
+          <motion.div
+            animate={{
+              translateY: isOpen ? 8 : 0,
+              rotate: isOpen ? [0, 0, -45] : 0,
+              transition: {
+                duration: 0.1,
+                ease: 'linear',
+              },
+            }}
+            style={{
+              height: '2px',
+              width: '20px',
+              backgroundColor: inView && !isOpen ? '#fff' : '#000',
+            }}
+          ></motion.div>
+          <motion.div
+            animate={{
+              opacity: isOpen ? 0 : 1,
+              transition: {
+                duration: 0.1,
+                ease: 'linear',
+              },
+            }}
+            style={{
+              height: '2px',
+              width: '20px',
+              backgroundColor: inView && !isOpen ? '#fff' : '#000',
+            }}
+          ></motion.div>
+          <motion.div
+            animate={{
+              translateY: isOpen ? -8 : 0,
+              rotate: isOpen ? [0, 0, 45] : 0,
+              transition: {
+                duration: 0.1,
+                ease: 'linear',
+              },
+            }}
+            style={{
+              height: '2px',
+              width: '20px',
+              backgroundColor: inView && !isOpen ? '#fff' : '#000',
+            }}
+          ></motion.div>
+        </motion.div>
 
         <ul className={`hidden lg:flex justify-evenly items-center text-md`}>
           {navItems.map((n, i) => {
@@ -93,42 +169,45 @@ const NavDropDown = ({ info }: { info: NavItem }) => {
   );
 };
 
-const renderNavContent = (info: NavItem) => {
+const renderNavContent = (info: NavItem, isMobile = false) => {
   return (
-    <>
-      {info.title === 'Products' && (
+    <div className='flex flex-col-reverse lg:block  p-4'>
+      {(isMobile || info.title === 'Products') && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { ease: 'linear', delay: 0.1 } }}
           style={{
-            height: info.height,
-            width: info.width,
-            position: 'absolute',
+            height: isMobile ? '100%' : info.height,
+            width: isMobile ? '100%' : info.width,
             top: '.25rem',
             left: '-10rem',
           }}
-          className='px-4 flex flex-col justify-evenly'
+          className='lg:absolute lg:px-4 pl-2 lg:pl-4 flex flex-col items-center lg:items-start justify-evenly mt-4 lg:mt-0'
         >
           <div className='flex cursor-pointer hover:opacity-70'>
             <div className='h-12 w-12 flex items-center justify-center bg-blue-300 rounded-full'>
               <MdAdminPanelSettings size={30} color='#fff' />
             </div>
             <div className='flex flex-col ml-4'>
-              <h3 className='text-lg font-bold text-blue-500'>Recusandae</h3>
-              <p className='text-sm font-light text-gray-600'>
+              <h3 className='text-base lg:text-lg font-bold text-blue-500'>
+                Recusandae
+              </h3>
+              <p className='w-56 lg:w-full text-sm font-light text-gray-600'>
                 Laboriosam obcaecati ipsam explicabo.
               </p>
             </div>
           </div>
 
-          <div className='flex cursor-pointer hover:opacity-70'>
+          <div className='flex cursor-pointer hover:opacity-70 my-4 lg:my-0'>
             <div className='h-12 w-12 flex items-center justify-center bg-green-300 rounded-full'>
               <MdAdsClick size={30} color='#fff' />
             </div>
             <div className='flex flex-col ml-4'>
-              <h3 className='text-lg font-bold text-green-500'>Laudantium</h3>
-              <p className='text-sm font-light text-gray-600'>
-                Animi laudantium quae, ea sit Lorem ipsum.
+              <h3 className='text-base lg:text-lg font-bold text-green-500'>
+                Laudantium
+              </h3>
+              <p className='w-56 lg:w-full text-sm font-light text-gray-600'>
+                Animi laudantium quae, ea sit lorem ipsum.
               </p>
             </div>
           </div>
@@ -138,8 +217,10 @@ const renderNavContent = (info: NavItem) => {
               <MdAssessment size={30} color='#fff' />
             </div>
             <div className='flex flex-col ml-4'>
-              <h3 className='text-lg font-bold text-indigo-500'>Architecto</h3>
-              <p className='text-sm font-light text-gray-600'>
+              <h3 className='text-base lg:text-lg font-bold text-indigo-500'>
+                Voluptates
+              </h3>
+              <p className='w-56 lg:w-full text-sm font-light text-gray-600'>
                 Praesentium adipisci rerum nihil.
               </p>
             </div>
@@ -147,27 +228,33 @@ const renderNavContent = (info: NavItem) => {
         </motion.div>
       )}
 
-      {info.title === 'Features' && (
+      <div
+        style={{ height: '1px' }}
+        className='w-full lg:hidden bg-gray-300 my-2'
+      ></div>
+
+      {(isMobile || info.title === 'Features') && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { ease: 'linear', delay: 0.1 } }}
           style={{
-            height: info.height,
-            width: info.width,
-            position: 'absolute',
+            height: isMobile ? '100%' : info.height,
+            width: isMobile ? '100%' : info.width,
             top: '.25rem',
-            left: '0',
+            left: '3rem',
           }}
-          className='px-12 py-4 flex flex-col justify-evenly'
+          className='lg:absolute my-4 lg:my-0 pl-4 lg:pl-0 lg:px-12 lg:py-4 flex flex-col items-center lg:items-start lg:justify-evenly'
         >
-          <div className='flex flex-col mb-4'>
-            <h3 className='text-2xl font-bold text-purple-600'>Architecto</h3>
+          <div className='flex flex-col items-center lg:items-start mb-4'>
+            <h3 className='text-lg lg:text-2xl font-bold text-purple-600'>
+              Architecto
+            </h3>
             <p className='text-sm font-light text-gray-600'>
               Praesentium adipisci rerum adipis.
             </p>
           </div>
 
-          <div className='flex justify-between h-1/2'>
+          <div className='flex lg:justify-between lg:h-1/2'>
             <div className='flex flex-col text-sm justify-between'>
               <h3 className='text-gray-500 uppercase'>Get Started</h3>
               <h4 className='text-purple-500 hover:opacity-50 cursor-pointer'>
@@ -181,7 +268,7 @@ const renderNavContent = (info: NavItem) => {
               </h4>
             </div>
 
-            <div className='flex flex-col text-sm justify-between'>
+            <div className='flex flex-col text-sm justify-between ml-8'>
               <h3 className='text-gray-500 uppercase'>Help</h3>
               <h4 className='text-purple-500 hover:opacity-50 cursor-pointer'>
                 cupiditate
@@ -197,48 +284,52 @@ const renderNavContent = (info: NavItem) => {
         </motion.div>
       )}
 
-      {info.title === 'About' && (
+      <div
+        style={{ height: '1px' }}
+        className='w-full lg:hidden bg-gray-300 my-2'
+      ></div>
+
+      {(isMobile || info.title === 'About') && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { ease: 'linear', delay: 0.1 } }}
           style={{
-            height: info.height,
-            width: info.width,
-            position: 'absolute',
+            height: isMobile ? '100%' : info.height,
+            width: isMobile ? '100%' : info.width,
             top: '.25rem',
             left: '12rem',
           }}
-          className='text-sm px-4 flex flex-col justify-evenly'
+          className='lg:absolute grid grid-cols-2 gap-2 lg:gap-0 md:flex flex-col items-center justify-evenly text-sm my-4 lg:my-0 ml-4 lg:ml-0 lg:px-4'
         >
-          <a href='#' className='flex items-center hover:opacity-75'>
+          <a href='#' className='flex items-center w-40 hover:opacity-75'>
             <MdInfo size={20} color={'#6C63FF'} />
             <h3 className='text-blue-600 ml-2 tracking-wider uppercase '>
               Reprehenderit
             </h3>
           </a>
 
-          <a href='#' className='flex items-center hover:opacity-75'>
+          <a href='#' className='flex items-center w-40 hover:opacity-75'>
             <MdPeopleAlt size={20} color={'#6C63FF'} />
             <h3 className='text-blue-600 ml-2 tracking-wider uppercase '>
               Temporibus
             </h3>
           </a>
 
-          <a href='#' className='flex items-center hover:opacity-75'>
+          <a href='#' className='flex items-center w-40 hover:opacity-75'>
             <MdOutlineImportContacts size={20} color={'#6C63FF'} />
             <h3 className='text-blue-600 ml-2 tracking-wider uppercase '>
               Consectetur
             </h3>
           </a>
 
-          <a href='#' className='flex items-center hover:opacity-75'>
+          <a href='#' className='flex items-center w-40 hover:opacity-75'>
             <MdAddModerator size={20} color={'#6C63FF'} />
             <h3 className='text-blue-600 ml-2 tracking-wider uppercase '>
               Mollitia
             </h3>
           </a>
 
-          <a href='#' className='flex items-center hover:opacity-75'>
+          <a href='#' className='flex items-center w-40 hover:opacity-75'>
             <MdBusinessCenter size={20} color={'#6C63FF'} />
             <h3 className='text-blue-600 ml-2 tracking-wider uppercase '>
               Nesciunt dicta
@@ -247,29 +338,37 @@ const renderNavContent = (info: NavItem) => {
         </motion.div>
       )}
 
-      {info.title === 'My Account' && (
+      <div
+        style={{ height: '.5px' }}
+        className='w-full lg:hidden bg-gray-300 my-2'
+      ></div>
+
+      {(isMobile || info.title === 'My Account') && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { ease: 'linear', delay: 0.1 } }}
           style={{
-            height: info.height,
-            width: info.width,
-            position: 'absolute',
+            height: isMobile ? '100%' : info.height,
+            width: isMobile ? '100%' : info.width,
             top: '.25rem',
             left: '15rem',
           }}
-          className='text-sm px-4 flex flex-col justify-evenly items-center'
+          className='lg:absolute text-xs lg:text-sm my-4 lg:my-0 px-4 flex flex-col justify-evenly items-center'
         >
-          <h3 className='text-xl font-bold text-purple-700'>Manage Account</h3>
+          <h3 className='text-base lg:text-xl font-bold text-purple-700 mb-4 lg:mb-0'>
+            Manage Account
+          </h3>
 
-          <button className='w-5/6 bg-white text-purple-800 font-bold hover:opacity-75 border-2 border-purple-800 rounded-md py-3'>
-            Log In
-          </button>
-          <button className='w-5/6 bg-purple-600 font-bold text-white hover:bg-purple-700 border-purple-800 rounded-md py-3'>
-            Contact Support
-          </button>
+          <div className='flex lg:flex-col justify-center lg:justify-start w-full lg:w-min'>
+            <button className='h-12 w-36 lg:w-44 bg-white text-purple-800 font-bold hover:opacity-75 border-2 border-purple-800 rounded-md py-3'>
+              Log In
+            </button>
+            <button className='h-12 w-36 lg:w-44 ml-4 lg:ml-0 bg-purple-600 font-bold text-white hover:bg-purple-700 border-purple-800 rounded-md lg:mt-2 py-3'>
+              Contact Support
+            </button>
+          </div>
         </motion.div>
       )}
-    </>
+    </div>
   );
 };

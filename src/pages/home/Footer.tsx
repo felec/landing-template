@@ -13,7 +13,7 @@ export const Footer = () => {
         background:
           'linear-gradient(90deg, rgba(77,10,144,1) 0%, rgba(121,51,190,1) 70%, rgba(139,68,209,1) 100%)',
       }}
-      className='flex flex-col w-full p-4 lg:p-16 mt-20 text-white'
+      className='flex flex-col w-full p-8 lg:p-16 mt-20 text-white'
     >
       <div className='grid grid-cols-2 justify-items-center gap-4 lg:gap-0 lg:flex justify-evenly lg:h-44'>
         <div className='h-full flex flex-col justify-evenly text-sm'>
