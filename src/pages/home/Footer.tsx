@@ -15,79 +15,87 @@ export const Footer = () => {
       }}
       className='flex flex-col w-full p-8 lg:p-16 mt-20 text-white'
     >
-      <div className='grid grid-cols-2 justify-items-center gap-4 lg:gap-0 lg:flex lg:justify-evenly lg:h-44'>
-        <div className='h-full flex flex-col justify-evenly text-sm'>
-          <h3 className='font-semibold mb-2'>Praesentium</h3>
-          <div className='h-full flex flex-col'>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Lusto atque
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Err sunt
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Facere
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Aliquam
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Eveniet
-            </a>
+      <div className='flex justify-evenly lg:h-44'>
+        <div className='flex flex-col lg:flex-row'>
+          <div className='h-full flex flex-col justify-evenly text-sm'>
+            <h3 className='font-semibold mb-2'>Praesentium</h3>
+            <div className='h-full flex flex-col'>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Lusto atque
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Err sunt
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Facere
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Aliquam
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Eveniet
+              </a>
+            </div>
+          </div>
+
+          <div className='h-16 lg:hidden'></div>
+
+          <div className='h-full flex flex-col justify-evenly text-sm text-white'>
+            <h3 className='font-semibold mb-2'>Pariatur</h3>
+            <div className='h-full flex flex-col'>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Cupiditate aliquid
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Ullam
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Quidem
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className='h-full flex flex-col justify-evenly text-sm text-white'>
-          <h3 className='font-semibold mb-2'>Pariatur</h3>
-          <div className='h-full flex flex-col'>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Cupiditate aliquid
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Ullam
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Quidem
-            </a>
+        <div className='flex flex-col lg:flex-row'>
+          <div className='h-full flex flex-col justify-evenly text-sm text-white'>
+            <h3 className='font-semibold mb-2'>Recusandae</h3>
+            <div className='h-full flex flex-col'>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Hicestiae
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Suscipit
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Harem quos
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Numquam
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Automnis
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div className='h-full flex flex-col justify-evenly text-sm text-white'>
-          <h3 className='font-semibold mb-2'>Recusandae</h3>
-          <div className='h-full flex flex-col'>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Hicestiae
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Suscipit
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Harem quos
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Numquam
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Automnis
-            </a>
-          </div>
-        </div>
+          <div className='h-16 lg:hidden'></div>
 
-        <div className='h-full flex flex-col text-sm text-white'>
-          <h3 className='font-semibold mb-2'>Similique</h3>
-          <div className='h-full flex flex-col'>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Doloremque
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Fugiat
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Corporis
-            </a>
-            <a href='#' className='hover:opacity-75 my-1'>
-              Inventore
-            </a>
+          <div className='h-full flex flex-col text-sm text-white'>
+            <h3 className='font-semibold mb-2'>Similique</h3>
+            <div className='h-full flex flex-col'>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Doloremque
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Fugiat
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Corporis
+              </a>
+              <a href='#' className='hover:opacity-75 my-1'>
+                Inventore
+              </a>
+            </div>
           </div>
         </div>
       </div>

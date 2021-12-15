@@ -258,7 +258,7 @@ const renderNavContent = (info: NavItem, isMobile = false) => {
           </div>
 
           <div className='flex lg:justify-between lg:h-1/2'>
-            <div className='flex flex-col text-sm justify-between'>
+            <div className='flex flex-col justify-between gap-2 text-sm'>
               <h3 className='text-gray-500 uppercase'>Get Started</h3>
               <h4 className='text-purple-500 hover:opacity-50 cursor-pointer'>
                 aspernatur
@@ -302,7 +302,7 @@ const renderNavContent = (info: NavItem, isMobile = false) => {
             top: '.25rem',
             left: '12rem',
           }}
-          className='lg:absolute grid grid-cols-2 gap-2 lg:gap-0 md:flex md:flex-col md:items-center md:justify-evenly text-xs lg:text-sm my-4 lg:my-0 ml-4 lg:ml-0 lg:px-4'
+          className='flex flex-col items-center justify-evenly gap-2 lg:gap-0 text-xs lg:text-sm my-4 lg:my-0 ml-4 lg:ml-0 lg:px-4'
         >
           <a href='#' className='flex items-center w-40 hover:opacity-75'>
             <MdInfo size={20} color={'#6C63FF'} />
