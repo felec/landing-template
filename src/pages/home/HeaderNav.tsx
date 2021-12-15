@@ -302,7 +302,7 @@ const renderNavContent = (info: NavItem, isMobile = false) => {
             top: '.25rem',
             left: '12rem',
           }}
-          className='flex flex-col items-center justify-evenly gap-2 lg:gap-0 text-xs lg:text-sm my-4 lg:my-0 ml-4 lg:ml-0 lg:px-4'
+          className='lg:absolute flex flex-col items-center justify-evenly gap-2 lg:gap-0 text-xs lg:text-sm my-4 lg:my-0 ml-4 lg:ml-0 lg:px-4'
         >
           <a href='#' className='flex items-center w-40 hover:opacity-75'>
             <MdInfo size={20} color={'#6C63FF'} />
