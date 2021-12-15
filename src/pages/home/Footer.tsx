@@ -15,7 +15,7 @@ export const Footer = () => {
       }}
       className='flex flex-col w-full p-8 lg:p-16 mt-20 text-white'
     >
-      <div className='grid grid-cols-2 justify-items-center gap-4 lg:gap-0 lg:flex justify-evenly lg:h-44'>
+      <div className='grid grid-cols-2 justify-items-center gap-4 lg:gap-0 lg:flex lg:justify-evenly lg:h-44'>
         <div className='h-full flex flex-col justify-evenly text-sm'>
           <h3 className='font-semibold mb-2'>Praesentium</h3>
           <div className='h-full flex flex-col'>
