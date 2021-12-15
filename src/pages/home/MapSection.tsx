@@ -35,7 +35,7 @@ export const MapSection = () => {
         10 locations worldwide
       </p>
 
-      <div className='lg:hidden grid grid-cols-2 justify-center'>
+      <div className='xl:hidden 2xl:grid grid grid-cols-2 justify-center'>
         {locs.map((l) => (
           <div key={l.city} className='flex items-center mx-4 md:mx-8 mb-4'>
             <div className='h-2 w-2 mr-2 rounded-full bg-purple-500'></div>
@@ -44,7 +44,10 @@ export const MapSection = () => {
         ))}
       </div>
 
-      <div ref={mapRef} className='hidden lg:block relative h-5/6 w-5/6'>
+      <div
+        ref={mapRef}
+        className='hidden xl:block 2xl:hidden relative h-5/6 w-5/6'
+      >
         <MapDots locs={locs} inView={mapInView} />
         <Map />
       </div>

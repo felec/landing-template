@@ -15,8 +15,8 @@ export const Footer = () => {
       }}
       className='flex flex-col w-full p-8 lg:p-16 mt-20 text-white'
     >
-      <div className='flex justify-evenly lg:h-44'>
-        <div className='flex flex-col lg:flex-row'>
+      <div className='flex justify-evenly lg:h-44 lg:w-full'>
+        <div className='flex flex-col lg:flex-row lg:w-1/2 lg:justify-evenly'>
           <div className='h-full flex flex-col justify-evenly text-sm'>
             <h3 className='font-semibold mb-2'>Praesentium</h3>
             <div className='h-full flex flex-col'>
@@ -56,7 +56,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className='flex flex-col lg:flex-row'>
+        <div className='flex flex-col lg:flex-row lg:w-1/2 lg:justify-evenly'>
           <div className='h-full flex flex-col justify-evenly text-sm text-white'>
             <h3 className='font-semibold mb-2'>Recusandae</h3>
             <div className='h-full flex flex-col'>
